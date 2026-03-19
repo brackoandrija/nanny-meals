@@ -107,8 +107,9 @@ export default function Home() {
   }, [])
 
   useEffect(() => {
-    // Load current meal
-    const mealId = currentMealData.mealId
+    // Check for admin override first, then fall back to default
+    const mealOverride = localStorage.getItem('mealOverride')
+    const mealId = mealOverride || currentMealData.mealId
     const meal = meals.find(m => m.id === mealId)
     if (meal) {
       setCurrentMeal(meal)

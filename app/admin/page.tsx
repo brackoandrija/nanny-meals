@@ -1,69 +1,77 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import mealsData from '@/data/meals.json'
 
 interface Meal {
   id: string
   name: { sr: string; en: string }
   category: string
+  ingredients: { sr: string[]; en: string[] }
 }
 
 export default function Admin() {
   const [password, setPassword] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [selectedMeal, setSelectedMeal] = useState('')
+  const [currentLunch, setCurrentLunch] = useState<Meal | null>(null)
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
+  const [filter, setFilter] = useState<'all' | 'lunch'>('lunch')
 
   const meals = Object.values(mealsData.meals) as Meal[]
-  const ADMIN_PASSWORD = 'teki2026' // Change this to your desired password
+  const ADMIN_PASSWORD = 'teki2026'
+
+  useEffect(() => {
+    // Check if already authenticated
+    const auth = sessionStorage.getItem('adminAuth')
+    if (auth === 'true') {
+      setIsAuthenticated(true)
+    }
+
+    // Load current lunch
+    const storedOverride = localStorage.getItem('mealOverride')
+    if (storedOverride) {
+      const meal = meals.find(m => m.id === storedOverride)
+      if (meal) {
+        setCurrentLunch(meal)
+      }
+    }
+  }, [])
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
     if (password === ADMIN_PASSWORD) {
       setIsAuthenticated(true)
+      sessionStorage.setItem('adminAuth', 'true')
       setError('')
     } else {
       setError('Pogrešna lozinka / Wrong password')
     }
   }
 
-  const handleUpdateMeal = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setMessage('')
-    setError('')
+  const handleSelectLunch = (meal: Meal) => {
+    // Save to localStorage - this will override the default meal
+    localStorage.setItem('mealOverride', meal.id)
 
-    if (!selectedMeal) {
-      setError('Molim izaberite obrok / Please select a meal')
-      return
+    // Reset lunch history to start fresh with new lunch
+    const today = new Date().toISOString().split('T')[0]
+    const newHistory = {
+      mealId: meal.id,
+      startDate: today,
+      daysCount: 1
     }
+    localStorage.setItem('lunchHistory', JSON.stringify(newHistory))
 
-    // In a real app, this would make an API call to update the JSON file
-    // For now, we'll show a success message
-    // You'll need to implement an API route to actually update the file
+    setCurrentLunch(meal)
+    setMessage(`✓ Obrok postavljen: ${meal.name.sr} / Meal set: ${meal.name.en}`)
 
-    try {
-      const response = await fetch('/api/update-meal', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ mealId: selectedMeal }),
-      })
-
-      if (response.ok) {
-        setMessage('Obrok uspešno ažuriran! / Meal updated successfully!')
-        setTimeout(() => {
-          window.location.href = '/'
-        }, 2000)
-      } else {
-        throw new Error('Failed to update')
-      }
-    } catch (err) {
-      setError('Greška pri ažuriranju / Error updating. Please update manually in data/current-meal.json')
-    }
+    setTimeout(() => {
+      setMessage('')
+    }, 3000)
   }
+
+  const lunchMeals = meals.filter(m => m.category === 'lunch')
+  const displayMeals = filter === 'lunch' ? lunchMeals : meals
 
   if (!isAuthenticated) {
     return (
@@ -80,6 +88,7 @@ export default function Admin() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter password"
+                autoFocus
               />
             </div>
             <button type="submit" className="btn">
@@ -92,40 +101,76 @@ export default function Admin() {
   }
 
   return (
-    <div className="admin-container">
-      <div className="admin-card">
-        <h1 className="admin-title">Izaberi Današnji Obrok<br />Select Today's Meal</h1>
+    <div className="admin-panel">
+      <div className="admin-header">
+        <h1 className="admin-main-title">Admin Panel</h1>
+        <a href="/" className="back-link">← Nazad / Back</a>
+      </div>
 
-        {message && <div className="success-message">{message}</div>}
-        {error && <div className="error-message">{error}</div>}
+      {message && <div className="success-message-floating">{message}</div>}
 
-        <form onSubmit={handleUpdateMeal}>
-          <div className="form-group">
-            <label className="form-label">Obrok / Meal</label>
-            <select
-              className="form-select"
-              value={selectedMeal}
-              onChange={(e) => setSelectedMeal(e.target.value)}
-            >
-              <option value="">-- Izaberi / Select --</option>
-              {meals.map((meal) => (
-                <option key={meal.id} value={meal.id}>
-                  {meal.name.sr} / {meal.name.en}
-                </option>
-              ))}
-            </select>
+      <div className="current-lunch-display">
+        <h2 className="section-title">Trenutni Ručak / Current Lunch:</h2>
+        {currentLunch ? (
+          <div className="current-lunch-card">
+            <h3>{currentLunch.name.sr}</h3>
+            <p className="en-name">{currentLunch.name.en}</p>
+            <div className="ingredients-preview">
+              {currentLunch.ingredients.sr.slice(0, 4).join(', ')}
+              {currentLunch.ingredients.sr.length > 4 && '...'}
+            </div>
           </div>
+        ) : (
+          <p className="no-lunch-text">Nema postavljenog ručka / No lunch set</p>
+        )}
+      </div>
 
-          <button type="submit" className="btn">
-            Ažuriraj Obrok / Update Meal
+      <div className="filter-section">
+        <h2 className="section-title">Izaberi Novi Ručak / Select New Lunch:</h2>
+        <div className="filter-buttons">
+          <button
+            className={`filter-toggle ${filter === 'lunch' ? 'active' : ''}`}
+            onClick={() => setFilter('lunch')}
+          >
+            Samo Ručkovi / Lunches Only ({lunchMeals.length})
           </button>
-        </form>
-
-        <div style={{ marginTop: '20px', textAlign: 'center' }}>
-          <a href="/" style={{ color: '#667eea', textDecoration: 'none' }}>
-            ← Nazad / Back to Home
-          </a>
+          <button
+            className={`filter-toggle ${filter === 'all' ? 'active' : ''}`}
+            onClick={() => setFilter('all')}
+          >
+            Svi Obroci / All Meals ({meals.length})
+          </button>
         </div>
+      </div>
+
+      <div className="meals-admin-grid">
+        {displayMeals.map((meal) => (
+          <div
+            key={meal.id}
+            className={`admin-meal-card ${currentLunch?.id === meal.id ? 'selected' : ''}`}
+            onClick={() => handleSelectLunch(meal)}
+          >
+            {currentLunch?.id === meal.id && (
+              <div className="selected-badge">✓ Trenutno / Current</div>
+            )}
+            <h3 className="admin-meal-title">{meal.name.sr}</h3>
+            <p className="admin-meal-subtitle">{meal.name.en}</p>
+            <div className="admin-meal-category">
+              {meal.category === 'lunch' && '🍽️ Ručak / Lunch'}
+              {meal.category === 'breakfast' && '🥐 Doručak / Breakfast'}
+              {meal.category === 'dinner' && '🌙 Večera / Dinner'}
+              {meal.category === 'snack' && '🍎 Užina / Snack'}
+            </div>
+            <div className="admin-ingredients">
+              {meal.ingredients.sr.slice(0, 3).map((ing, i) => (
+                <span key={i} className="ingredient-tag">{ing}</span>
+              ))}
+              {meal.ingredients.sr.length > 3 && (
+                <span className="more-tag">+{meal.ingredients.sr.length - 3}</span>
+              )}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   )
