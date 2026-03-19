@@ -1097,24 +1097,20 @@ body {
 
 .instruction-icon {
   font-size: 2.5rem;
-  animation: pointDown 1.5s ease-in-out infinite;
+  transform: rotate(180deg);
+  animation: pointUp 1.5s ease-in-out infinite;
 }
 
-@keyframes pointDown {
+@keyframes pointUp {
   0%, 100% {
-    transform: translateY(0);
+    transform: rotate(180deg) translateY(0);
   }
   50% {
-    transform: translateY(8px);
+    transform: rotate(180deg) translateY(-8px);
   }
+  animation: pointUp 1.5s ease-in-out infinite;
 }
 
-.instruction-text {
-  flex: 1;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
 
 .instruction-arrow {
   position: absolute;
