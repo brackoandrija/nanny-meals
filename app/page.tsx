@@ -16,6 +16,12 @@ interface Meal {
   recipe?: { sr: string; en: string }
 }
 
+interface LunchHistory {
+  mealId: string
+  startDate: string
+  daysCount: number
+}
+
 const translations = {
   sr: {
     title: 'Teki Obroci',
@@ -25,6 +31,20 @@ const translations = {
     ingredients: 'Sastojci',
     recipe: 'Recept',
     allMeals: 'Svi Obroci',
+    newLunch: 'Novi Ručak',
+    confirmNewLunch: 'Da li ste sigurni da želite novi ručak? Već ste završili dva dana zaredom sa ovim obrokom.',
+    yes: 'Da',
+    no: 'Ne',
+    lunchDay: 'Dan',
+    days: {
+      monday: 'Ponedeljak',
+      tuesday: 'Utorak',
+      wednesday: 'Sreda',
+      thursday: 'Četvrtak',
+      friday: 'Petak',
+      saturday: 'Subota',
+      sunday: 'Nedelja'
+    },
     categories: {
       all: 'Sve',
       breakfast: 'Doručak',
@@ -41,6 +61,20 @@ const translations = {
     ingredients: 'Ingredients',
     recipe: 'Recipe',
     allMeals: 'All Meals',
+    newLunch: 'New Lunch',
+    confirmNewLunch: 'Are you sure you want a new lunch? You already finished two days in a row with this meal.',
+    yes: 'Yes',
+    no: 'No',
+    lunchDay: 'Day',
+    days: {
+      monday: 'Monday',
+      tuesday: 'Tuesday',
+      wednesday: 'Wednesday',
+      thursday: 'Thursday',
+      friday: 'Friday',
+      saturday: 'Saturday',
+      sunday: 'Sunday'
+    },
     categories: {
       all: 'All',
       breakfast: 'Breakfast',
@@ -57,9 +91,20 @@ export default function Home() {
   const [selectedMeal, setSelectedMeal] = useState<Meal | null>(null)
   const [currentMeal, setCurrentMeal] = useState<Meal | null>(null)
   const [category, setCategory] = useState<Category>('all')
+  const [lunchHistory, setLunchHistory] = useState<LunchHistory | null>(null)
+  const [showConfirm, setShowConfirm] = useState(false)
+  const [todayDay, setTodayDay] = useState('')
+  const [mealHistory, setMealHistory] = useState<string[]>([])
 
   const t = translations[lang]
   const meals = Object.values(mealsData.meals) as Meal[]
+
+  // Get today's day name
+  useEffect(() => {
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+    const today = new Date().getDay()
+    setTodayDay(days[today])
+  }, [])
 
   useEffect(() => {
     // Load current meal
@@ -68,7 +113,88 @@ export default function Home() {
     if (meal) {
       setCurrentMeal(meal)
     }
+
+    // Load lunch history from localStorage
+    const storedHistory = localStorage.getItem('lunchHistory')
+    if (storedHistory) {
+      const history: LunchHistory = JSON.parse(storedHistory)
+      const today = new Date().toISOString().split('T')[0]
+
+      // Check if we need to increment day count
+      if (history.mealId === mealId) {
+        const daysDiff = Math.floor((new Date(today).getTime() - new Date(history.startDate).getTime()) / (1000 * 60 * 60 * 24))
+        history.daysCount = daysDiff + 1
+        setLunchHistory(history)
+        localStorage.setItem('lunchHistory', JSON.stringify(history))
+      } else {
+        // New lunch started
+        const newHistory = {
+          mealId,
+          startDate: today,
+          daysCount: 1
+        }
+        setLunchHistory(newHistory)
+        localStorage.setItem('lunchHistory', JSON.stringify(newHistory))
+      }
+    } else {
+      // First time - initialize
+      const newHistory = {
+        mealId,
+        startDate: new Date().toISOString().split('T')[0],
+        daysCount: 1
+      }
+      setLunchHistory(newHistory)
+      localStorage.setItem('lunchHistory', JSON.stringify(newHistory))
+    }
+
+    // Load meal history
+    const storedMealHistory = localStorage.getItem('mealHistory')
+    if (storedMealHistory) {
+      setMealHistory(JSON.parse(storedMealHistory))
+    }
   }, [])
+
+  const getRandomLunch = () => {
+    const lunchMeals = meals.filter(m => m.category === 'lunch')
+    // Filter out recently used meals (last 5)
+    const availableLunches = lunchMeals.filter(m => !mealHistory.slice(-5).includes(m.id))
+
+    if (availableLunches.length === 0) {
+      // If all meals have been used, reset and use all lunches
+      return lunchMeals[Math.floor(Math.random() * lunchMeals.length)]
+    }
+
+    return availableLunches[Math.floor(Math.random() * availableLunches.length)]
+  }
+
+  const handleNewLunch = () => {
+    if (lunchHistory && lunchHistory.daysCount >= 2) {
+      setShowConfirm(true)
+    } else {
+      changeLunch()
+    }
+  }
+
+  const changeLunch = () => {
+    const newLunch = getRandomLunch()
+    setCurrentMeal(newLunch)
+
+    const today = new Date().toISOString().split('T')[0]
+    const newHistory = {
+      mealId: newLunch.id,
+      startDate: today,
+      daysCount: 1
+    }
+    setLunchHistory(newHistory)
+    localStorage.setItem('lunchHistory', JSON.stringify(newHistory))
+
+    // Update meal history
+    const updatedMealHistory = [...mealHistory, newLunch.id]
+    setMealHistory(updatedMealHistory)
+    localStorage.setItem('mealHistory', JSON.stringify(updatedMealHistory))
+
+    setShowConfirm(false)
+  }
 
   const filteredMeals = category === 'all'
     ? meals
@@ -116,25 +242,47 @@ export default function Home() {
       </div>
 
       {tab === 'today' && currentMeal && (
-        <div className="card">
-          <h2 className="meal-title">{currentMeal.name[lang]}</h2>
-
-          <div>
-            <h3 className="ingredients-title">{t.ingredients}:</h3>
-            <ul className="ingredients-list">
-              {currentMeal.ingredients[lang].map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-              ))}
-            </ul>
+        <>
+          <div className="today-info">
+            {todayDay && (
+              <div className="today-day">
+                {t.days[todayDay as keyof typeof t.days]}
+              </div>
+            )}
           </div>
 
-          {currentMeal.recipe && (
-            <div className="recipe-section">
-              <h3 className="recipe-title">{t.recipe}:</h3>
-              <p className="recipe-text">{currentMeal.recipe[lang]}</p>
+          <div className="card">
+            <h2 className="meal-title">{currentMeal.name[lang]}</h2>
+
+            {currentMeal.category === 'lunch' && lunchHistory && (
+              <div className="lunch-day-counter">
+                {t.lunchDay} {lunchHistory.daysCount}/2
+              </div>
+            )}
+
+            <div>
+              <h3 className="ingredients-title">{t.ingredients}:</h3>
+              <ul className="ingredients-list">
+                {currentMeal.ingredients[lang].map((ingredient, index) => (
+                  <li key={index}>{ingredient}</li>
+                ))}
+              </ul>
             </div>
+
+            {currentMeal.recipe && (
+              <div className="recipe-section">
+                <h3 className="recipe-title">{t.recipe}:</h3>
+                <p className="recipe-text">{currentMeal.recipe[lang]}</p>
+              </div>
+            )}
+          </div>
+
+          {currentMeal.category === 'lunch' && (
+            <button className="new-lunch-btn" onClick={handleNewLunch}>
+              {t.newLunch}
+            </button>
           )}
-        </div>
+        </>
       )}
 
       {tab === 'all' && (
@@ -194,6 +342,22 @@ export default function Home() {
                 <p className="recipe-text">{selectedMeal.recipe[lang]}</p>
               </div>
             )}
+          </div>
+        </div>
+      )}
+
+      {showConfirm && (
+        <div className="modal-overlay" onClick={() => setShowConfirm(false)}>
+          <div className="confirm-modal" onClick={(e) => e.stopPropagation()}>
+            <h3 className="confirm-title">{t.confirmNewLunch}</h3>
+            <div className="confirm-buttons">
+              <button className="confirm-btn confirm-yes" onClick={changeLunch}>
+                {t.yes}
+              </button>
+              <button className="confirm-btn confirm-no" onClick={() => setShowConfirm(false)}>
+                {t.no}
+              </button>
+            </div>
           </div>
         </div>
       )}
