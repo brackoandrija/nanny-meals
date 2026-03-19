@@ -93,3 +93,4 @@ vercel
 3. Follow prompts and your app will be live!
 
 For Vercel deployment, update `next.config.js` to remove `basePath`.
+# Trigger deploy
