@@ -10,7 +10,10 @@
         "Crni luk",
         "Paradajz",
         "Meso (opciono)"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 30,
+      "recipeSteps": []
     },
     "musaka": {
       "id": "musaka",
@@ -24,7 +27,16 @@
         "Jaje",
         "Pavlaka"
       ],
-      "recipe": "Glavicu crnog luka i šargarepu oljustiti oprati iseckati i staviti da se dinsta na vodi, dodati mešano mleveno meso i dinstati par minuta. U međuvremenu oljustiti, oprati, iseći krompir na kolutove iređati u tepsiju na pek papir koji ste poprskali maslinovim uljem zatim preko kompira sipati smesu od mesa i povrća zatim preko smese opetređati krompir pa smesu od mesa i na kraju opet poredjati krompir. Umutiti 1 jaje dodati kašičicu pavlake i preliti preko krompira i mesa. Dodati malo zdrave vegete iz DM-a. Staviti u rernu i peći oko 1h na 200 stepeni."
+      "recipe": "Glavicu crnog luka i šargarepu oljustiti oprati iseckati i staviti da se dinsta na vodi, dodati mešano mleveno meso i dinstati par minuta. U međuvremenu oljustiti, oprati, iseći krompir na kolutove iređati u tepsiju na pek papir koji ste poprskali maslinovim uljem zatim preko kompira sipati smesu od mesa i povrća zatim preko smese opetređati krompir pa smesu od mesa i na kraju opet poredjati krompir. Umutiti 1 jaje dodati kašičicu pavlake i preliti preko krompira i mesa. Dodati malo zdrave vegete iz DM-a. Staviti u rernu i peći oko 1h na 200 stepeni.",
+      "mealType": "junetina",
+      "prepTime": 30,
+      "recipeSteps": [
+        "Glavicu crnog luka i šargarepu oljustiti oprati iseckati i staviti da se dinsta na vodi, dodati mešano mleveno meso i dinstati par minuta.",
+        "U međuvremenu oljustiti, oprati, iseći krompir na kolutove iređati u tepsiju na pek papir koji ste poprskali maslinovim uljem zatim preko kompira sipati smesu od mesa i povrća zatim preko smese opetređati krompir pa smesu od mesa i na kraju opet poredjati krompir.",
+        "Umutiti 1 jaje dodati kašičicu pavlake i preliti preko krompira i mesa.",
+        "Dodati malo zdrave vegete iz DM-a.",
+        "Staviti u rernu i peći oko 1h na 200 stepeni."
+      ]
     },
     "pire_nuggets": {
       "id": "pire_nuggets",
@@ -37,7 +49,10 @@
         "Piletina",
         "Ovsene pahuljice",
         "Jaje"
-      ]
+      ],
+      "mealType": "piletina",
+      "prepTime": 30,
+      "recipeSteps": []
     },
     "krompir_paprikas": {
       "id": "krompir_paprikas",
@@ -54,7 +69,18 @@
         "Paradajz pire",
         "Aleva paprika"
       ],
-      "recipe": "Piletinu iseći na kockice, pa pržiti na ulju nekoliko minuta. Prvo će pustiti vodu, pa čim ta voda nestane dodajte sitno iseckan crni i beli luk i pržite još 5-6 minuta. Zatim dodajte seckanu šargarepu, paštanat i celer. Još malo propržite, pa dodajte malo himajalske soli, zdravu vegetu, paradajz pire i vodu. Sve lepo promešajte, smanjite vatru, poklopite i kuvajte 30-40 min. Pred kraj, dodajte kašiku kukuruznog brašna i brzo sve promešajte, da se ne stvore grudvice. Kuvajte još 5 min."
+      "recipe": "Piletinu iseći na kockice, pa pržiti na ulju nekoliko minuta. Prvo će pustiti vodu, pa čim ta voda nestane dodajte sitno iseckan crni i beli luk i pržite još 5-6 minuta. Zatim dodajte seckanu šargarepu, paštanat i celer. Još malo propržite, pa dodajte malo himajalske soli, zdravu vegetu, paradajz pire i vodu. Sve lepo promešajte, smanjite vatru, poklopite i kuvajte 30-40 min. Pred kraj, dodajte kašiku kukuruznog brašna i brzo sve promešajte, da se ne stvore grudvice. Kuvajte još 5 min.",
+      "mealType": "piletina",
+      "prepTime": 40,
+      "recipeSteps": [
+        "Piletinu iseći na kockice, pa pržiti na ulju nekoliko minuta.",
+        "Prvo će pustiti vodu, pa čim ta voda nestane dodajte sitno iseckan crni i beli luk i pržite još 5-6 minuta.",
+        "Zatim dodajte seckanu šargarepu, paštanat i celer.",
+        "Još malo propržite, pa dodajte malo himajalske soli, zdravu vegetu, paradajz pire i vodu.",
+        "Sve lepo promešajte, smanjite vatru, poklopite i kuvajte 30-40 min.",
+        "Pred kraj, dodajte kašiku kukuruznog brašna i brzo sve promešajte, da se ne stvore grudvice.",
+        "Kuvajte još 5 min."
+      ]
     },
     "pileca_supa": {
       "id": "pileca_supa",
@@ -66,7 +92,13 @@
         "Paštanat",
         "Crni luk"
       ],
-      "recipe": "1 pileća leđa dobro operete i stavite da se kuva, dodate 1 šargarepu, paskanat i crni luk koje ste prethodno oprali i isekli i sve zajedno kuvate oko 30tak minuta na srednjoj temperaturi. Procedite i stavite ponovo na sporet da provri samo tečni deo supe."
+      "recipe": "1 pileća leđa dobro operete i stavite da se kuva, dodate 1 šargarepu, paskanat i crni luk koje ste prethodno oprali i isekli i sve zajedno kuvate oko 30tak minuta na srednjoj temperaturi. Procedite i stavite ponovo na sporet da provri samo tečni deo supe.",
+      "mealType": "piletina",
+      "prepTime": 25,
+      "recipeSteps": [
+        "1 pileća leđa dobro operete i stavite da se kuva, dodate 1 šargarepu, paskanat i crni luk koje ste prethodno oprali i isekli i sve zajedno kuvate oko 30tak minuta na srednjoj temperaturi.",
+        "Procedite i stavite ponovo na sporet da provri samo tečni deo supe."
+      ]
     },
     "pilece_cuftice_batat": {
       "id": "pilece_cuftice_batat",
@@ -80,7 +112,14 @@
         "Himalajska so",
         "Batat"
       ],
-      "recipe": "300 gr pilećeg filea, 1 jaje, 2 kašike ovsenih pahuljica, 1 kašika maslinovog ulja i malo himajalske soli, izblendati i vaditi kašikom na papir. Batat oljustiti i iseckati na trakice i poprskati maslinovim uljem. Staviti da se peče u rerni na 200 stepeni oko 20 min."
+      "recipe": "300 gr pilećeg filea, 1 jaje, 2 kašike ovsenih pahuljica, 1 kašika maslinovog ulja i malo himajalske soli, izblendati i vaditi kašikom na papir. Batat oljustiti i iseckati na trakice i poprskati maslinovim uljem. Staviti da se peče u rerni na 200 stepeni oko 20 min.",
+      "mealType": "piletina",
+      "prepTime": 20,
+      "recipeSteps": [
+        "300 gr pilećeg filea, 1 jaje, 2 kašike ovsenih pahuljica, 1 kašika maslinovog ulja i malo himajalske soli, izblendati i vaditi kašikom na papir.",
+        "Batat oljustiti i iseckati na trakice i poprskati maslinovim uljem.",
+        "Staviti da se peče u rerni na 200 stepeni oko 20 min."
+      ]
     },
     "pilav_riblji_kolutici": {
       "id": "pilav_riblji_kolutici",
@@ -96,7 +135,15 @@
         "Paprika",
         "Riblji file"
       ],
-      "recipe": "1 šolju pirinča potopiti, zatim isprati u 3-4 vodi. Prodinstati crni luk na maslinovom ulju, dodati malo mlevenog belog luka i staviti pileće meso da se dinsta. Dodati malo vode. Staviti šargarepu da se dinsta, i posle dodati tikvice i papriku i sve kuvati na pari još oko 50 minuta."
+      "recipe": "1 šolju pirinča potopiti, zatim isprati u 3-4 vodi. Prodinstati crni luk na maslinovom ulju, dodati malo mlevenog belog luka i staviti pileće meso da se dinsta. Dodati malo vode. Staviti šargarepu da se dinsta, i posle dodati tikvice i papriku i sve kuvati na pari još oko 50 minuta.",
+      "mealType": "piletina",
+      "prepTime": 40,
+      "recipeSteps": [
+        "1 šolju pirinča potopiti, zatim isprati u 3-4 vodi.",
+        "Prodinstati crni luk na maslinovom ulju, dodati malo mlevenog belog luka i staviti pileće meso da se dinsta.",
+        "Dodati malo vode.",
+        "Staviti šargarepu da se dinsta, i posle dodati tikvice i papriku i sve kuvati na pari još oko 50 minuta."
+      ]
     },
     "socivo": {
       "id": "socivo",
@@ -110,7 +157,15 @@
         "Crni luk",
         "Tikvica"
       ],
-      "recipe": "Parce junetine staviti da se kuva oko 45 minuta do 1h. Zatim 1 kašiku sočiva dobro isprati i staviti da se kuva oko 15 tak minuta. U međuvremenu oljustite i operete papriku, šargarepu i crveni luk i kuvate oko 15 tak minuta zatim dodate tikvicu i kuvate sve zajedno još 5 minuta. Sve ohladite sjedinite."
+      "recipe": "Parce junetine staviti da se kuva oko 45 minuta do 1h. Zatim 1 kašiku sočiva dobro isprati i staviti da se kuva oko 15 tak minuta. U međuvremenu oljustite i operete papriku, šargarepu i crveni luk i kuvate oko 15 tak minuta zatim dodate tikvicu i kuvate sve zajedno još 5 minuta. Sve ohladite sjedinite.",
+      "mealType": "junetina",
+      "prepTime": 45,
+      "recipeSteps": [
+        "Parce junetine staviti da se kuva oko 45 minuta do 1h.",
+        "Zatim 1 kašiku sočiva dobro isprati i staviti da se kuva oko 15 tak minuta.",
+        "U međuvremenu oljustite i operete papriku, šargarepu i crveni luk i kuvate oko 15 tak minuta zatim dodate tikvicu i kuvate sve zajedno još 5 minuta.",
+        "Sve ohladite sjedinite."
+      ]
     },
     "dzem_hleb": {
       "id": "dzem_hleb",
@@ -119,7 +174,10 @@
       "ingredients": [
         "Hleb (3 parceta)",
         "Džem/Urmolada"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "kajgana": {
       "id": "kajgana",
@@ -131,7 +189,13 @@
         "Pavlaka",
         "Paradajz"
       ],
-      "recipe": "Umutiti jedno jaje, pomešati sa fetom ili mladim sirom i peći na maslinovom ulju. Dodati i malo pavlake."
+      "recipe": "Umutiti jedno jaje, pomešati sa fetom ili mladim sirom i peći na maslinovom ulju. Dodati i malo pavlake.",
+      "mealType": "jaja",
+      "prepTime": 15,
+      "recipeSteps": [
+        "Umutiti jedno jaje, pomešati sa fetom ili mladim sirom i peći na maslinovom ulju.",
+        "Dodati i malo pavlake."
+      ]
     },
     "heljda_malina": {
       "id": "heljda_malina",
@@ -141,7 +205,10 @@
         "Heljdine pahuljice",
         "Lesnikovo mleko",
         "Malina"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "hleb_humus": {
       "id": "hleb_humus",
@@ -151,7 +218,10 @@
         "Integralni hleb",
         "Humus",
         "Cherry paradajz"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "palacinke_dzem": {
       "id": "palacinke_dzem",
@@ -164,7 +234,14 @@
         "Maslinovo ulje",
         "Džem/Urmolada"
       ],
-      "recipe": "1 jaje umutiti, dodati 3 kašike ovsenih pahuljica, 1 kašiku pavlake i 1 kašiku masinovog ulja. Peći na suvom tiganju na tihoj vatri. Služiti uz urmoladu ili sir."
+      "recipe": "1 jaje umutiti, dodati 3 kašike ovsenih pahuljica, 1 kašiku pavlake i 1 kašiku masinovog ulja. Peći na suvom tiganju na tihoj vatri. Služiti uz urmoladu ili sir.",
+      "mealType": "jaja",
+      "prepTime": 15,
+      "recipeSteps": [
+        "1 jaje umutiti, dodati 3 kašike ovsenih pahuljica, 1 kašiku pavlake i 1 kašiku masinovog ulja.",
+        "Peći na suvom tiganju na tihoj vatri.",
+        "Služiti uz urmoladu ili sir."
+      ]
     },
     "kiflice_sir": {
       "id": "kiflice_sir",
@@ -173,7 +250,10 @@
       "ingredients": [
         "Kiflice",
         "Sir"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "griz_cimet": {
       "id": "griz_cimet",
@@ -185,7 +265,12 @@
         "Cimet",
         "Voćna kaša"
       ],
-      "recipe": "Na vodi skuvati griz, kad se skuva, dodati na vrh kašičice cimeta, i voćne kaše"
+      "recipe": "Na vodi skuvati griz, kad se skuva, dodati na vrh kašičice cimeta, i voćne kaše",
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": [
+        "Na vodi skuvati griz, kad se skuva, dodati na vrh kašičice cimeta, i voćne kaše."
+      ]
     },
     "bakin_kolac": {
       "id": "bakin_kolac",
@@ -200,7 +285,16 @@
         "Prašak za pecivo",
         "Limun"
       ],
-      "recipe": "Mikserom Izmutite 1 jaje pa postepeno dodate 1 kašiku kokosovog šećera ili 1 kašiku meda sipate 60 ml mleka 60g maslinovog ulja i mutite mikserom dok se ne sjedini (možete po želji dodati 1 kašičicu kakao praha ili mlevenog rogača). Nakon toga kašikom postepeno dodate 150g brašna po želji i prašak za pecivo mešajući ručno sve vreme. Na kraju izrendate koru od limuna koji mora biti dobro opran. Kašikom vadite smesu i pečete u prethodno zagrejanom aparatu za galete. Ohladite i ponudite bebi uz neki namaz po želji."
+      "recipe": "Mikserom Izmutite 1 jaje pa postepeno dodate 1 kašiku kokosovog šećera ili 1 kašiku meda sipate 60 ml mleka 60g maslinovog ulja i mutite mikserom dok se ne sjedini (možete po želji dodati 1 kašičicu kakao praha ili mlevenog rogača). Nakon toga kašikom postepeno dodate 150g brašna po želji i prašak za pecivo mešajući ručno sve vreme. Na kraju izrendate koru od limuna koji mora biti dobro opran. Kašikom vadite smesu i pečete u prethodno zagrejanom aparatu za galete. Ohladite i ponudite bebi uz neki namaz po želji.",
+      "mealType": "jaja",
+      "prepTime": 15,
+      "recipeSteps": [
+        "Mikserom Izmutite 1 jaje pa postepeno dodate 1 kašiku kokosovog šećera ili 1 kašiku meda sipate 60 ml mleka 60g maslinovog ulja i mutite mikserom dok se ne sjedini (možete po želji dodati 1 kašičicu kakao praha ili mlevenog rogača).",
+        "Nakon toga kašikom postepeno dodate 150g brašna po želji i prašak za pecivo mešajući ručno sve vreme.",
+        "Na kraju izrendate koru od limuna koji mora biti dobro opran.",
+        "Kašikom vadite smesu i pečete u prethodno zagrejanom aparatu za galete.",
+        "Ohladite i ponudite bebi uz neki namaz po želji."
+      ]
     },
     "proja_sir": {
       "id": "proja_sir",
@@ -211,7 +305,10 @@
         "Sir",
         "Jaje",
         "Jogurt"
-      ]
+      ],
+      "mealType": "jaja",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "ovsene_palacinke": {
       "id": "ovsene_palacinke",
@@ -223,7 +320,10 @@
         "Pavlaka",
         "Maslinovo ulje",
         "Urmolada"
-      ]
+      ],
+      "mealType": "jaja",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "kuvano_jaje": {
       "id": "kuvano_jaje",
@@ -233,7 +333,10 @@
         "Jaje",
         "Integralni hleb",
         "Humus"
-      ]
+      ],
+      "mealType": "jaja",
+      "prepTime": 15,
+      "recipeSteps": []
     },
     "palenta_sir": {
       "id": "palenta_sir",
@@ -245,7 +348,12 @@
         "Puter/Maslac",
         "Sir/Pavlaka"
       ],
-      "recipe": "Na vodi skuvati palentu, dodati u vodu malo putera/maslaca i dodati na kraju sir/pavlaku"
+      "recipe": "Na vodi skuvati palentu, dodati u vodu malo putera/maslaca i dodati na kraju sir/pavlaku",
+      "mealType": "povrce",
+      "prepTime": 25,
+      "recipeSteps": [
+        "Na vodi skuvati palentu, dodati u vodu malo putera/maslaca i dodati na kraju sir/pavlaku."
+      ]
     },
     "makarone_bolonjeze": {
       "id": "makarone_bolonjeze",
@@ -259,7 +367,13 @@
         "Paradajz sos",
         "Bosiljak"
       ],
-      "recipe": "Speltinu testeninu skuvati prema uputstvu sa kesice zatim na maslinovom ulju prodinstati crni luk i šargarepu zatim dodati mleveno meso i pred kraj preliti sosom od paradajza i kuvati par minuta dok se ne zgusne. Dodati začine po želji (malo himalajske soli, bosiljak..) Sve ohladiti sjediniti."
+      "recipe": "Speltinu testeninu skuvati prema uputstvu sa kesice zatim na maslinovom ulju prodinstati crni luk i šargarepu zatim dodati mleveno meso i pred kraj preliti sosom od paradajza i kuvati par minuta dok se ne zgusne. Dodati začine po želji (malo himalajske soli, bosiljak..) Sve ohladiti sjediniti.",
+      "mealType": "junetina",
+      "prepTime": 30,
+      "recipeSteps": [
+        "Speltinu testeninu skuvati prema uputstvu sa kesice zatim na maslinovom ulju prodinstati crni luk i šargarepu zatim dodati mleveno meso i pred kraj preliti sosom od paradajza i kuvati par minuta dok se ne zgusne.",
+        "Dodati začine po želji (malo himalajske soli, bosiljak..) Sve ohladiti sjediniti."
+      ]
     },
     "przenice": {
       "id": "przenice",
@@ -271,7 +385,12 @@
         "Maslinovo ulje",
         "Sir/Pavlaka"
       ],
-      "recipe": "3 parceta hleba umočiti u jaje, pržiti na maslinovom ulju i preko namazati Sirka ili pavlaku"
+      "recipe": "3 parceta hleba umočiti u jaje, pržiti na maslinovom ulju i preko namazati Sirka ili pavlaku",
+      "mealType": "jaja",
+      "prepTime": 25,
+      "recipeSteps": [
+        "3 parceta hleba umočiti u jaje, pržiti na maslinovom ulju i preko namazati Sirka ili pavlaku."
+      ]
     },
     "pizza": {
       "id": "pizza",
@@ -282,7 +401,10 @@
         "Paradajz sos",
         "Sir",
         "Povrće"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 25,
+      "recipeSteps": []
     },
     "sendvic": {
       "id": "sendvic",
@@ -292,7 +414,10 @@
         "Hleb",
         "Sirni namaz",
         "Pileća prsa"
-      ]
+      ],
+      "mealType": "piletina",
+      "prepTime": 25,
+      "recipeSteps": []
     },
     "pitica_sir": {
       "id": "pitica_sir",
@@ -307,7 +432,14 @@
         "Speltino brašno",
         "Prašak za pecivo"
       ],
-      "recipe": "1 manju tikvicu izrendati i dobro ocediti od vode. Umutiti jedno jaje, sjediniti sa tikvicoom, dodati 50g kisele pavlake, 100 ml jogurta, 50g mladog sira, 1 šolju speltinog brašna i 1/2 kesice praska za pecivo. izliti u tepsiju i peći u rerni na 200 stepeni oko 30 min."
+      "recipe": "1 manju tikvicu izrendati i dobro ocediti od vode. Umutiti jedno jaje, sjediniti sa tikvicoom, dodati 50g kisele pavlake, 100 ml jogurta, 50g mladog sira, 1 šolju speltinog brašna i 1/2 kesice praska za pecivo. izliti u tepsiju i peći u rerni na 200 stepeni oko 30 min.",
+      "mealType": "jaja",
+      "prepTime": 30,
+      "recipeSteps": [
+        "1 manju tikvicu izrendati i dobro ocediti od vode.",
+        "Umutiti jedno jaje, sjediniti sa tikvicoom, dodati 50g kisele pavlake, 100 ml jogurta, 50g mladog sira, 1 šolju speltinog brašna i 1/2 kesice praska za pecivo.",
+        "izliti u tepsiju i peći u rerni na 200 stepeni oko 30 min."
+      ]
     },
     "palacinke": {
       "id": "palacinke",
@@ -318,7 +450,10 @@
         "Brašno",
         "Pavlaka",
         "Maslinovo ulje"
-      ]
+      ],
+      "mealType": "jaja",
+      "prepTime": 25,
+      "recipeSteps": []
     },
     "tikvica_riba": {
       "id": "tikvica_riba",
@@ -328,7 +463,10 @@
         "Tikvica",
         "Riblji filet",
         "Integralni hleb"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 25,
+      "recipeSteps": []
     },
     "povrtna_corbica": {
       "id": "povrtna_corbica",
@@ -340,7 +478,10 @@
         "Tikvica",
         "Crni luk",
         "Pileće meso"
-      ]
+      ],
+      "mealType": "piletina",
+      "prepTime": 30,
+      "recipeSteps": []
     },
     "voce": {
       "id": "voce",
@@ -348,7 +489,10 @@
       "category": "snack",
       "ingredients": [
         "Sezonsko voće"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": []
     },
     "grcki_jogurt_cokolada": {
       "id": "grcki_jogurt_cokolada",
@@ -357,7 +501,10 @@
       "ingredients": [
         "Grčki jogurt",
         "Crna čokolada"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": []
     },
     "sirni_stapici": {
       "id": "sirni_stapici",
@@ -369,7 +516,10 @@
         "Jaje",
         "Povrće",
         "Semenke"
-      ]
+      ],
+      "mealType": "jaja",
+      "prepTime": 10,
+      "recipeSteps": []
     },
     "zdrave_kuglice": {
       "id": "zdrave_kuglice",
@@ -383,7 +533,12 @@
         "Whey protein (30g)",
         "Voda/Mleko"
       ],
-      "recipe": "90gr ovsenih pahuljica, 45 gr kikiriki putera, 25 gr meda, 30 tamne čokolade, 30 whey proteina i malo vode/mleka, umesati, sjediniti u kuglice i ostaviti u frižideru."
+      "recipe": "90gr ovsenih pahuljica, 45 gr kikiriki putera, 25 gr meda, 30 tamne čokolade, 30 whey proteina i malo vode/mleka, umesati, sjediniti u kuglice i ostaviti u frižideru.",
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": [
+        "90gr ovsenih pahuljica, 45 gr kikiriki putera, 25 gr meda, 30 tamne čokolade, 30 whey proteina i malo vode/mleka, umesati, sjediniti u kuglice i ostaviti u frižideru."
+      ]
     },
     "puding_avokado": {
       "id": "puding_avokado",
@@ -394,7 +549,10 @@
         "Banana",
         "Grčki jogurt",
         "Cimet"
-      ]
+      ],
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": []
     },
     "hrskavi_keksici": {
       "id": "hrskavi_keksici",
@@ -405,7 +563,14 @@
         "Mleveni lešnici (300g)",
         "Med (1-2 kašike)"
       ],
-      "recipe": "2 belanca umutiti u čvrst sneg, dodati mlevene lešnike (300gr) i med (1-2 kašike), lagano sjediniti sastojke. Napraviti loptice iređati u pleh i pritisnuti ih blago formirajući keksiće. Sušiti u zagrejanoj rerni na 100 stepeni 45 minuta."
+      "recipe": "2 belanca umutiti u čvrst sneg, dodati mlevene lešnike (300gr) i med (1-2 kašike), lagano sjediniti sastojke. Napraviti loptice iređati u pleh i pritisnuti ih blago formirajući keksiće. Sušiti u zagrejanoj rerni na 100 stepeni 45 minuta.",
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": [
+        "2 belanca umutiti u čvrst sneg, dodati mlevene lešnike (300gr) i med (1-2 kašike), lagano sjediniti sastojke.",
+        "Napraviti loptice iređati u pleh i pritisnuti ih blago formirajući keksiće.",
+        "Sušiti u zagrejanoj rerni na 100 stepeni 45 minuta."
+      ]
     },
     "vocni_smuti": {
       "id": "vocni_smuti",
@@ -419,7 +584,12 @@
         "Maline",
         "Med"
       ],
-      "recipe": "50 ml lesnikovog/bademovog mleka, borovnice, jagode, manga, maline i malo meda..."
+      "recipe": "50 ml lesnikovog/bademovog mleka, borovnice, jagode, manga, maline i malo meda...",
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": [
+        "50 ml lesnikovog/bademovog mleka, borovnice, jagode, manga, maline i malo meda..."
+      ]
     },
     "puding_jabuka": {
       "id": "puding_jabuka",
@@ -433,7 +603,14 @@
         "Grčki jogurt",
         "Cimet"
       ],
-      "recipe": "1 kašiku ovsenih pahuljica preliti vrelom vodom i ostaviti da odstoji oko 10 min. Bananu i jabuku staviti u blender, dodati ovsene, bademe i kašiku grčkog jogurta. Preko dodati malo cimeta."
+      "recipe": "1 kašiku ovsenih pahuljica preliti vrelom vodom i ostaviti da odstoji oko 10 min. Bananu i jabuku staviti u blender, dodati ovsene, bademe i kašiku grčkog jogurta. Preko dodati malo cimeta.",
+      "mealType": "povrce",
+      "prepTime": 10,
+      "recipeSteps": [
+        "1 kašiku ovsenih pahuljica preliti vrelom vodom i ostaviti da odstoji oko 10 min.",
+        "Bananu i jabuku staviti u blender, dodati ovsene, bademe i kašiku grčkog jogurta.",
+        "Preko dodati malo cimeta."
+      ]
     },
     "vafli_banana": {
       "id": "vafli_banana",
@@ -445,7 +622,12 @@
         "Kikiriki puter",
         "Cimet"
       ],
-      "recipe": "Na vafle/bakin kolac namazati tanak sloj kikiriki putera i preko iseckati bananu."
+      "recipe": "Na vafle/bakin kolac namazati tanak sloj kikiriki putera i preko iseckati bananu.",
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": [
+        "Na vafle/bakin kolac namazati tanak sloj kikiriki putera i preko iseckati bananu."
+      ]
     },
     "muesli_jogurt": {
       "id": "muesli_jogurt",
@@ -458,7 +640,13 @@
         "Grčki jogurt",
         "Med"
       ],
-      "recipe": "Pomešati ovsene pahuljice, sitno seckane orahe i voce. Preliti grčkim jogurtom i malo meda."
+      "recipe": "Pomešati ovsene pahuljice, sitno seckane orahe i voce. Preliti grčkim jogurtom i malo meda.",
+      "mealType": "povrce",
+      "prepTime": 15,
+      "recipeSteps": [
+        "Pomešati ovsene pahuljice, sitno seckane orahe i voce.",
+        "Preliti grčkim jogurtom i malo meda."
+      ]
     },
     "pastrmka_blitva": {
       "id": "pastrmka_blitva",
@@ -471,7 +659,13 @@
         "Limun",
         "Maslinovo ulje"
       ],
-      "recipe": "Ribu peći sa limunom. Blitvu i krompir skuvati odvojeno, poslužiti zajedno."
+      "recipe": "Ribu peći sa limunom. Blitvu i krompir skuvati odvojeno, poslužiti zajedno.",
+      "mealType": "riba",
+      "prepTime": 30,
+      "recipeSteps": [
+        "Ribu peći sa limunom.",
+        "Blitvu i krompir skuvati odvojeno, poslužiti zajedno."
+      ]
     },
     "curetina_batat": {
       "id": "curetina_batat",
@@ -484,7 +678,14 @@
         "Maslinovo ulje",
         "Beli luk"
       ],
-      "recipe": "Batat iseckati i peći. Ćuretinu/piletinu dinstati sa belim lukom. Brokoli kuvati na pari."
+      "recipe": "Batat iseckati i peći. Ćuretinu/piletinu dinstati sa belim lukom. Brokoli kuvati na pari.",
+      "mealType": "curetina",
+      "prepTime": 30,
+      "recipeSteps": [
+        "Batat iseckati i peći.",
+        "Ćuretinu/piletinu dinstati sa belim lukom.",
+        "Brokoli kuvati na pari."
+      ]
     },
     "pasta_piletina": {
       "id": "pasta_piletina",
@@ -497,7 +698,14 @@
         "Bosiljak",
         "Parmezan"
       ],
-      "recipe": "Pastu skuvati. Piletinu propržiti sa cherry paradajzom. Sjediniti i dodati bosiljak."
+      "recipe": "Pastu skuvati. Piletinu propržiti sa cherry paradajzom. Sjediniti i dodati bosiljak.",
+      "mealType": "piletina",
+      "prepTime": 30,
+      "recipeSteps": [
+        "Pastu skuvati.",
+        "Piletinu propržiti sa cherry paradajzom.",
+        "Sjediniti i dodati bosiljak."
+      ]
     }
   }
 }
