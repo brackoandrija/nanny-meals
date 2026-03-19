@@ -2,909 +2,502 @@
   "meals": {
     "boranija": {
       "id": "boranija",
-      "name": {
-        "sr": "Boranija",
-        "en": "Green Beans"
-      },
+      "name": "Boranija",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Boranija",
-          "Krompir",
-          "Crni luk",
-          "Paradajz",
-          "Meso (opciono)"
-        ],
-        "en": [
-          "Green beans",
-          "Potatoes",
-          "Onion",
-          "Tomato",
-          "Meat (optional)"
-        ]
-      }
+      "ingredients": [
+        "Boranija",
+        "Krompir",
+        "Crni luk",
+        "Paradajz",
+        "Meso (opciono)"
+      ]
     },
     "musaka": {
       "id": "musaka",
-      "name": {
-        "sr": "Musaka",
-        "en": "Moussaka"
-      },
+      "name": "Musaka",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Krompir",
-          "Mleveno meso",
-          "Crni luk",
-          "Šargarepa",
-          "Jaje",
-          "Pavlaka"
-        ],
-        "en": [
-          "Potatoes",
-          "Ground meat",
-          "Onion",
-          "Carrot",
-          "Egg",
-          "Sour cream"
-        ]
-      },
-      "recipe": {
-        "sr": "Glavicu crnog luka i šargarepu oljustiti oprati iseckati i staviti da se dinsta na vodi, dodati mešano mleveno meso i dinstati par minuta. U međuvremenu oljustiti, oprati, iseći krompir na kolutove iređati u tepsiju na pek papir koji ste poprskali maslinovim uljem zatim preko kompira sipati smesu od mesa i povrća zatim preko smese opetređati krompir pa smesu od mesa i na kraju opet poredjati krompir. Umutiti 1 jaje dodati kašičicu pavlake i preliti preko krompira i mesa. Dodati malo zdrave vegete iz DM-a. Staviti u rernu i peći oko 1h na 200 stepeni.",
-        "en": "Peel, wash and chop onion and carrot, sauté in water, add mixed ground meat and sauté for a few minutes. Meanwhile, peel, wash, slice potatoes and arrange in baking dish on parchment paper sprayed with olive oil, then pour meat and vegetable mixture over potatoes, then layer potatoes again, then meat mixture, and finally potatoes again. Beat 1 egg, add a teaspoon of sour cream and pour over potatoes and meat. Add a little healthy vegeta. Bake in oven for about 1 hour at 200 degrees."
-      }
+      "ingredients": [
+        "Krompir",
+        "Mleveno meso",
+        "Crni luk",
+        "Šargarepa",
+        "Jaje",
+        "Pavlaka"
+      ],
+      "recipe": "Glavicu crnog luka i šargarepu oljustiti oprati iseckati i staviti da se dinsta na vodi, dodati mešano mleveno meso i dinstati par minuta. U međuvremenu oljustiti, oprati, iseći krompir na kolutove iređati u tepsiju na pek papir koji ste poprskali maslinovim uljem zatim preko kompira sipati smesu od mesa i povrća zatim preko smese opetređati krompir pa smesu od mesa i na kraju opet poredjati krompir. Umutiti 1 jaje dodati kašičicu pavlake i preliti preko krompira i mesa. Dodati malo zdrave vegete iz DM-a. Staviti u rernu i peći oko 1h na 200 stepeni."
     },
     "pire_nuggets": {
       "id": "pire_nuggets",
-      "name": {
-        "sr": "Pire i Chicken nuggets",
-        "en": "Mashed Potatoes and Chicken Nuggets"
-      },
+      "name": "Pire i Chicken nuggets",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Krompir",
-          "Mleko",
-          "Puter",
-          "Piletina",
-          "Ovsene pahuljice",
-          "Jaje"
-        ],
-        "en": [
-          "Potatoes",
-          "Milk",
-          "Butter",
-          "Chicken",
-          "Oat flakes",
-          "Egg"
-        ]
-      }
+      "ingredients": [
+        "Krompir",
+        "Mleko",
+        "Puter",
+        "Piletina",
+        "Ovsene pahuljice",
+        "Jaje"
+      ]
     },
     "krompir_paprikas": {
       "id": "krompir_paprikas",
-      "name": {
-        "sr": "Krompir paprikaš",
-        "en": "Potato Paprikash"
-      },
+      "name": "Krompir paprikaš",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Krompir",
-          "Piletina",
-          "Crni luk",
-          "Beli luk",
-          "Šargarepa",
-          "Paštanat",
-          "Celer",
-          "Paradajz pire",
-          "Aleva paprika"
-        ],
-        "en": [
-          "Potatoes",
-          "Chicken",
-          "Onion",
-          "Garlic",
-          "Carrot",
-          "Parsnip",
-          "Celery",
-          "Tomato paste",
-          "Paprika"
-        ]
-      },
-      "recipe": {
-        "sr": "Piletinu iseći na kockice, pa pržiti na ulju nekoliko minuta. Prvo će pustiti vodu, pa čim ta voda nestane dodajte sitno iseckan crni i beli luk i pržite još 5-6 minuta. Zatim dodajte seckanu šargarepu, paštanat i celer. Još malo propržite, pa dodajte malo himajalske soli, zdravu vegetu, paradajz pire i vodu. Sve lepo promešajte, smanjite vatru, poklopite i kuvajte 30-40 min. Pred kraj, dodajte kašiku kukuruznog brašna i brzo sve promešajte, da se ne stvore grudvice. Kuvajte još 5 min.",
-        "en": "Cut chicken into cubes and fry in oil for a few minutes. First it will release water, and as soon as the water disappears add finely chopped onion and garlic and fry for another 5-6 minutes. Then add chopped carrot, parsnip and celery. Fry a little more, then add a little Himalayan salt, healthy vegeta, tomato paste and water. Mix everything well, reduce heat, cover and cook for 30-40 min. Before the end, add a spoon of corn flour and quickly mix everything so that lumps do not form. Cook for another 5 min."
-      }
+      "ingredients": [
+        "Krompir",
+        "Piletina",
+        "Crni luk",
+        "Beli luk",
+        "Šargarepa",
+        "Paštanat",
+        "Celer",
+        "Paradajz pire",
+        "Aleva paprika"
+      ],
+      "recipe": "Piletinu iseći na kockice, pa pržiti na ulju nekoliko minuta. Prvo će pustiti vodu, pa čim ta voda nestane dodajte sitno iseckan crni i beli luk i pržite još 5-6 minuta. Zatim dodajte seckanu šargarepu, paštanat i celer. Još malo propržite, pa dodajte malo himajalske soli, zdravu vegetu, paradajz pire i vodu. Sve lepo promešajte, smanjite vatru, poklopite i kuvajte 30-40 min. Pred kraj, dodajte kašiku kukuruznog brašna i brzo sve promešajte, da se ne stvore grudvice. Kuvajte još 5 min."
     },
     "pileca_supa": {
       "id": "pileca_supa",
-      "name": {
-        "sr": "Pileća supa",
-        "en": "Chicken Soup"
-      },
+      "name": "Pileća supa",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Pileća leđa",
-          "Šargarepa",
-          "Paštanat",
-          "Crni luk"
-        ],
-        "en": [
-          "Chicken backs",
-          "Carrot",
-          "Parsnip",
-          "Onion"
-        ]
-      },
-      "recipe": {
-        "sr": "1 pileća leđa dobro operete i stavite da se kuva, dodate 1 šargarepu, paskanat i crni luk koje ste prethodno oprali i isekli i sve zajedno kuvate oko 30tak minuta na srednjoj temperaturi. Procedite i stavite ponovo na sporet da provri samo tečni deo supe.",
-        "en": "Wash 1 chicken back well and put to boil, add 1 carrot, parsnip and onion which you previously washed and cut and cook everything together for about 30 minutes at medium temperature. Strain and put back on the stove to boil only the liquid part of the soup."
-      }
+      "ingredients": [
+        "Pileća leđa",
+        "Šargarepa",
+        "Paštanat",
+        "Crni luk"
+      ],
+      "recipe": "1 pileća leđa dobro operete i stavite da se kuva, dodate 1 šargarepu, paskanat i crni luk koje ste prethodno oprali i isekli i sve zajedno kuvate oko 30tak minuta na srednjoj temperaturi. Procedite i stavite ponovo na sporet da provri samo tečni deo supe."
     },
     "pilece_cuftice_batat": {
       "id": "pilece_cuftice_batat",
-      "name": {
-        "sr": "Pileće ćuftice i batat",
-        "en": "Chicken Meatballs and Sweet Potato"
-      },
+      "name": "Pileće ćuftice i batat",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Pileći file (300g)",
-          "Jaje",
-          "Ovsene pahuljice (2 kašike)",
-          "Maslinovo ulje",
-          "Himalajska so",
-          "Batat"
-        ],
-        "en": [
-          "Chicken fillet (300g)",
-          "Egg",
-          "Oat flakes (2 spoons)",
-          "Olive oil",
-          "Himalayan salt",
-          "Sweet potato"
-        ]
-      },
-      "recipe": {
-        "sr": "300 gr pilećeg filea, 1 jaje, 2 kašike ovsenih pahuljica, 1 kašika maslinovog ulja i malo himajalske soli, izblendati i vaditi kašikom na papir. Batat oljustiti i iseckati na trakice i poprskati maslinovim uljem. Staviti da se peče u rerni na 200 stepeni oko 20 min.",
-        "en": "300 gr chicken fillet, 1 egg, 2 tablespoons oat flakes, 1 tablespoon olive oil and a little Himalayan salt, blend and spoon onto paper. Peel sweet potato and cut into strips and spray with olive oil. Bake in oven at 200 degrees for about 20 min."
-      }
+      "ingredients": [
+        "Pileći file (300g)",
+        "Jaje",
+        "Ovsene pahuljice (2 kašike)",
+        "Maslinovo ulje",
+        "Himalajska so",
+        "Batat"
+      ],
+      "recipe": "300 gr pilećeg filea, 1 jaje, 2 kašike ovsenih pahuljica, 1 kašika maslinovog ulja i malo himajalske soli, izblendati i vaditi kašikom na papir. Batat oljustiti i iseckati na trakice i poprskati maslinovim uljem. Staviti da se peče u rerni na 200 stepeni oko 20 min."
     },
     "pilav_riblji_kolutici": {
       "id": "pilav_riblji_kolutici",
-      "name": {
-        "sr": "Pilav i riblji kolutići",
-        "en": "Rice Pilaf and Fish Rings"
-      },
+      "name": "Pilav i riblji kolutići",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Pirinač",
-          "Crni luk",
-          "Beli luk",
-          "Pileće meso",
-          "Šargarepa",
-          "Tikvica",
-          "Paprika",
-          "Riblji file"
-        ],
-        "en": [
-          "Rice",
-          "Onion",
-          "Garlic",
-          "Chicken meat",
-          "Carrot",
-          "Zucchini",
-          "Bell pepper",
-          "Fish fillet"
-        ]
-      },
-      "recipe": {
-        "sr": "1 šolju pirinča potopiti, zatim isprati u 3-4 vodi. Prodinstati crni luk na maslinovom ulju, dodati malo mlevenog belog luka i staviti pileće meso da se dinsta. Dodati malo vode. Staviti šargarepu da se dinsta, i posle dodati tikvice i papriku i sve kuvati na pari još oko 50 minuta.",
-        "en": "Soak 1 cup of rice, then rinse in 3-4 waters. Sauté onion in olive oil, add a little ground garlic and put chicken meat to sauté. Add a little water. Put carrot to sauté, and then add zucchini and pepper and steam everything for another 50 minutes."
-      }
+      "ingredients": [
+        "Pirinač",
+        "Crni luk",
+        "Beli luk",
+        "Pileće meso",
+        "Šargarepa",
+        "Tikvica",
+        "Paprika",
+        "Riblji file"
+      ],
+      "recipe": "1 šolju pirinča potopiti, zatim isprati u 3-4 vodi. Prodinstati crni luk na maslinovom ulju, dodati malo mlevenog belog luka i staviti pileće meso da se dinsta. Dodati malo vode. Staviti šargarepu da se dinsta, i posle dodati tikvice i papriku i sve kuvati na pari još oko 50 minuta."
     },
     "socivo": {
       "id": "socivo",
-      "name": {
-        "sr": "Sočivo sa povrćem i junetinom",
-        "en": "Lentils with Vegetables and Beef"
-      },
+      "name": "Sočivo sa povrćem i junetinom",
       "category": "lunch",
-      "ingredients": {
-        "sr": [
-          "Junetina",
-          "Crveno sočivo",
-          "Paprika",
-          "Šargarepa",
-          "Crni luk",
-          "Tikvica"
-        ],
-        "en": [
-          "Beef",
-          "Red lentils",
-          "Bell pepper",
-          "Carrot",
-          "Onion",
-          "Zucchini"
-        ]
-      },
-      "recipe": {
-        "sr": "Parce junetine staviti da se kuva oko 45 minuta do 1h. Zatim 1 kašiku sočiva dobro isprati i staviti da se kuva oko 15 tak minuta. U međuvremenu oljustite i operete papriku, šargarepu i crveni luk i kuvate oko 15 tak minuta zatim dodate tikvicu i kuvate sve zajedno još 5 minuta. Sve ohladite sjedinite.",
-        "en": "Put a piece of beef to cook for about 45 minutes to 1 hour. Then rinse 1 tablespoon of lentils well and put to cook for about 15 minutes. In the meantime, peel and wash pepper, carrot and red onion and cook for about 15 minutes, then add zucchini and cook everything together for another 5 minutes. Cool everything and combine."
-      }
+      "ingredients": [
+        "Junetina",
+        "Crveno sočivo",
+        "Paprika",
+        "Šargarepa",
+        "Crni luk",
+        "Tikvica"
+      ],
+      "recipe": "Parce junetine staviti da se kuva oko 45 minuta do 1h. Zatim 1 kašiku sočiva dobro isprati i staviti da se kuva oko 15 tak minuta. U međuvremenu oljustite i operete papriku, šargarepu i crveni luk i kuvate oko 15 tak minuta zatim dodate tikvicu i kuvate sve zajedno još 5 minuta. Sve ohladite sjedinite."
     },
     "dzem_hleb": {
       "id": "dzem_hleb",
-      "name": {
-        "sr": "Džem i hleb",
-        "en": "Jam and Bread"
-      },
+      "name": "Džem i hleb",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Hleb (3 parceta)",
-          "Džem/Urmolada"
-        ],
-        "en": [
-          "Bread (3 slices)",
-          "Jam/Date spread"
-        ]
-      }
+      "ingredients": [
+        "Hleb (3 parceta)",
+        "Džem/Urmolada"
+      ]
     },
     "kajgana": {
       "id": "kajgana",
-      "name": {
-        "sr": "Kajgana sa sirom",
-        "en": "Scrambled Eggs with Cheese"
-      },
+      "name": "Kajgana sa sirom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Jaje",
-          "Sir/Feta",
-          "Pavlaka",
-          "Paradajz"
-        ],
-        "en": [
-          "Egg",
-          "Cheese/Feta",
-          "Sour cream",
-          "Tomato"
-        ]
-      },
-      "recipe": {
-        "sr": "Umutiti jedno jaje, pomešati sa fetom ili mladim sirom i peći na maslinovom ulju. Dodati i malo pavlake.",
-        "en": "Beat one egg, mix with feta or young cheese and fry in olive oil. Add a little sour cream."
-      }
+      "ingredients": [
+        "Jaje",
+        "Sir/Feta",
+        "Pavlaka",
+        "Paradajz"
+      ],
+      "recipe": "Umutiti jedno jaje, pomešati sa fetom ili mladim sirom i peći na maslinovom ulju. Dodati i malo pavlake."
     },
     "heljda_malina": {
       "id": "heljda_malina",
-      "name": {
-        "sr": "Heljdine pahuljice sa malinom",
-        "en": "Buckwheat Flakes with Raspberry"
-      },
+      "name": "Heljdine pahuljice sa malinom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Heljdine pahuljice",
-          "Lesnikovo mleko",
-          "Malina"
-        ],
-        "en": [
-          "Buckwheat flakes",
-          "Hazelnut milk",
-          "Raspberry"
-        ]
-      }
+      "ingredients": [
+        "Heljdine pahuljice",
+        "Lesnikovo mleko",
+        "Malina"
+      ]
     },
     "hleb_humus": {
       "id": "hleb_humus",
-      "name": {
-        "sr": "Hleb sa humusom i cherry paradajz",
-        "en": "Bread with Hummus and Cherry Tomatoes"
-      },
+      "name": "Hleb sa humusom i cherry paradajz",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Integralni hleb",
-          "Humus",
-          "Cherry paradajz"
-        ],
-        "en": [
-          "Whole wheat bread",
-          "Hummus",
-          "Cherry tomatoes"
-        ]
-      }
+      "ingredients": [
+        "Integralni hleb",
+        "Humus",
+        "Cherry paradajz"
+      ]
     },
     "palacinke_dzem": {
       "id": "palacinke_dzem",
-      "name": {
-        "sr": "Palačinke sa džemom",
-        "en": "Pancakes with Jam"
-      },
+      "name": "Palačinke sa džemom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Jaje",
-          "Ovsene pahuljice",
-          "Pavlaka",
-          "Maslinovo ulje",
-          "Džem/Urmolada"
-        ],
-        "en": [
-          "Egg",
-          "Oat flakes",
-          "Sour cream",
-          "Olive oil",
-          "Jam/Date spread"
-        ]
-      },
-      "recipe": {
-        "sr": "1 jaje umutiti, dodati 3 kašike ovsenih pahuljica, 1 kašiku pavlake i 1 kašiku masinovog ulja. Peći na suvom tiganju na tihoj vatri. Služiti uz urmoladu ili sir.",
-        "en": "Beat 1 egg, add 3 tablespoons oat flakes, 1 tablespoon sour cream and 1 tablespoon oil. Fry on a dry pan on low heat. Serve with date spread or cheese."
-      }
+      "ingredients": [
+        "Jaje",
+        "Ovsene pahuljice",
+        "Pavlaka",
+        "Maslinovo ulje",
+        "Džem/Urmolada"
+      ],
+      "recipe": "1 jaje umutiti, dodati 3 kašike ovsenih pahuljica, 1 kašiku pavlake i 1 kašiku masinovog ulja. Peći na suvom tiganju na tihoj vatri. Služiti uz urmoladu ili sir."
     },
     "kiflice_sir": {
       "id": "kiflice_sir",
-      "name": {
-        "sr": "Kiflice sa sirom",
-        "en": "Croissants with Cheese"
-      },
+      "name": "Kiflice sa sirom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Kiflice",
-          "Sir"
-        ],
-        "en": [
-          "Croissants",
-          "Cheese"
-        ]
-      }
+      "ingredients": [
+        "Kiflice",
+        "Sir"
+      ]
     },
     "griz_cimet": {
       "id": "griz_cimet",
-      "name": {
-        "sr": "Griz sa cimetom i voćem",
-        "en": "Semolina with Cinnamon and Fruit"
-      },
+      "name": "Griz sa cimetom i voćem",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Griz",
-          "Voda",
-          "Cimet",
-          "Voćna kaša"
-        ],
-        "en": [
-          "Semolina",
-          "Water",
-          "Cinnamon",
-          "Fruit puree"
-        ]
-      },
-      "recipe": {
-        "sr": "Na vodi skuvati griz, kad se skuva, dodati na vrh kašičice cimeta, i voćne kaše",
-        "en": "Cook semolina in water, when cooked, add a pinch of cinnamon on top, and fruit puree"
-      }
+      "ingredients": [
+        "Griz",
+        "Voda",
+        "Cimet",
+        "Voćna kaša"
+      ],
+      "recipe": "Na vodi skuvati griz, kad se skuva, dodati na vrh kašičice cimeta, i voćne kaše"
     },
     "bakin_kolac": {
       "id": "bakin_kolac",
-      "name": {
-        "sr": "Bakin kolač",
-        "en": "Grandma's Cake"
-      },
+      "name": "Bakin kolač",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Jaje",
-          "Kokosov šećer/Med",
-          "Mleko (60ml)",
-          "Maslinovo ulje (60g)",
-          "Brašno (150g)",
-          "Prašak za pecivo",
-          "Limun"
-        ],
-        "en": [
-          "Egg",
-          "Coconut sugar/Honey",
-          "Milk (60ml)",
-          "Olive oil (60g)",
-          "Flour (150g)",
-          "Baking powder",
-          "Lemon"
-        ]
-      },
-      "recipe": {
-        "sr": "Mikserom Izmutite 1 jaje pa postepeno dodate 1 kašiku kokosovog šećera ili 1 kašiku meda sipate 60 ml mleka 60g maslinovog ulja i mutite mikserom dok se ne sjedini (možete po želji dodati 1 kašičicu kakao praha ili mlevenog rogača). Nakon toga kašikom postepeno dodate 150g brašna po želji i prašak za pecivo mešajući ručno sve vreme. Na kraju izrendate koru od limuna koji mora biti dobro opran. Kašikom vadite smesu i pečete u prethodno zagrejanom aparatu za galete. Ohladite i ponudite bebi uz neki namaz po želji.",
-        "en": "With a mixer, beat 1 egg, then gradually add 1 tablespoon of coconut sugar or 1 tablespoon of honey, pour 60 ml of milk, 60g of olive oil and beat with a mixer until combined (you can add 1 teaspoon of cocoa powder or ground carob if desired). Then gradually add 150g of flour as desired and baking powder, mixing by hand all the time. Finally, grate the peel of a lemon that must be well washed. Spoon the mixture and bake in a preheated waffle maker. Cool and offer to baby with any spread as desired."
-      }
+      "ingredients": [
+        "Jaje",
+        "Kokosov šećer/Med",
+        "Mleko (60ml)",
+        "Maslinovo ulje (60g)",
+        "Brašno (150g)",
+        "Prašak za pecivo",
+        "Limun"
+      ],
+      "recipe": "Mikserom Izmutite 1 jaje pa postepeno dodate 1 kašiku kokosovog šećera ili 1 kašiku meda sipate 60 ml mleka 60g maslinovog ulja i mutite mikserom dok se ne sjedini (možete po želji dodati 1 kašičicu kakao praha ili mlevenog rogača). Nakon toga kašikom postepeno dodate 150g brašna po želji i prašak za pecivo mešajući ručno sve vreme. Na kraju izrendate koru od limuna koji mora biti dobro opran. Kašikom vadite smesu i pečete u prethodno zagrejanom aparatu za galete. Ohladite i ponudite bebi uz neki namaz po želji."
     },
     "proja_sir": {
       "id": "proja_sir",
-      "name": {
-        "sr": "Proja sa sirom",
-        "en": "Cornbread with Cheese"
-      },
+      "name": "Proja sa sirom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Kukuruzno brašno",
-          "Sir",
-          "Jaje",
-          "Jogurt"
-        ],
-        "en": [
-          "Corn flour",
-          "Cheese",
-          "Egg",
-          "Yogurt"
-        ]
-      }
+      "ingredients": [
+        "Kukuruzno brašno",
+        "Sir",
+        "Jaje",
+        "Jogurt"
+      ]
     },
     "ovsene_palacinke": {
       "id": "ovsene_palacinke",
-      "name": {
-        "sr": "Ovsene palačinke sa urmoladom",
-        "en": "Oat Pancakes with Date Spread"
-      },
+      "name": "Ovsene palačinke sa urmoladom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Jaje",
-          "Ovsene pahuljice",
-          "Pavlaka",
-          "Maslinovo ulje",
-          "Urmolada"
-        ],
-        "en": [
-          "Egg",
-          "Oat flakes",
-          "Sour cream",
-          "Olive oil",
-          "Date spread"
-        ]
-      }
+      "ingredients": [
+        "Jaje",
+        "Ovsene pahuljice",
+        "Pavlaka",
+        "Maslinovo ulje",
+        "Urmolada"
+      ]
     },
     "kuvano_jaje": {
       "id": "kuvano_jaje",
-      "name": {
-        "sr": "Kuvano jaje sa integralnim hlebom",
-        "en": "Boiled Egg with Whole Wheat Bread"
-      },
+      "name": "Kuvano jaje sa integralnim hlebom",
       "category": "breakfast",
-      "ingredients": {
-        "sr": [
-          "Jaje",
-          "Integralni hleb",
-          "Humus"
-        ],
-        "en": [
-          "Egg",
-          "Whole wheat bread",
-          "Hummus"
-        ]
-      }
+      "ingredients": [
+        "Jaje",
+        "Integralni hleb",
+        "Humus"
+      ]
     },
     "palenta_sir": {
       "id": "palenta_sir",
-      "name": {
-        "sr": "Palenta sa sirom",
-        "en": "Polenta with Cheese"
-      },
+      "name": "Palenta sa sirom",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Palenta",
-          "Voda",
-          "Puter/Maslac",
-          "Sir/Pavlaka"
-        ],
-        "en": [
-          "Polenta",
-          "Water",
-          "Butter",
-          "Cheese/Sour cream"
-        ]
-      },
-      "recipe": {
-        "sr": "Na vodi skuvati palentu, dodati u vodu malo putera/maslaca i dodati na kraju sir/pavlaku",
-        "en": "Cook polenta in water, add a little butter to the water and add cheese/sour cream at the end"
-      }
+      "ingredients": [
+        "Palenta",
+        "Voda",
+        "Puter/Maslac",
+        "Sir/Pavlaka"
+      ],
+      "recipe": "Na vodi skuvati palentu, dodati u vodu malo putera/maslaca i dodati na kraju sir/pavlaku"
     },
     "makarone_bolonjeze": {
       "id": "makarone_bolonjeze",
-      "name": {
-        "sr": "Makarone bolonjeze",
-        "en": "Bolognese Pasta"
-      },
+      "name": "Makarone bolonjeze",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Speltina testenina",
-          "Crni luk",
-          "Šargarepa",
-          "Mleveno meso",
-          "Paradajz sos",
-          "Bosiljak"
-        ],
-        "en": [
-          "Spelt pasta",
-          "Onion",
-          "Carrot",
-          "Ground meat",
-          "Tomato sauce",
-          "Basil"
-        ]
-      },
-      "recipe": {
-        "sr": "Speltinu testeninu skuvati prema uputstvu sa kesice zatim na maslinovom ulju prodinstati crni luk i šargarepu zatim dodati mleveno meso i pred kraj preliti sosom od paradajza i kuvati par minuta dok se ne zgusne. Dodati začine po želji (malo himalajske soli, bosiljak..) Sve ohladiti sjediniti.",
-        "en": "Cook spelt pasta according to package instructions, then sauté onion and carrot in olive oil, then add ground meat and pour tomato sauce before the end and cook for a few minutes until thickened. Add spices as desired (a little Himalayan salt, basil..) Cool everything and combine."
-      }
+      "ingredients": [
+        "Speltina testenina",
+        "Crni luk",
+        "Šargarepa",
+        "Mleveno meso",
+        "Paradajz sos",
+        "Bosiljak"
+      ],
+      "recipe": "Speltinu testeninu skuvati prema uputstvu sa kesice zatim na maslinovom ulju prodinstati crni luk i šargarepu zatim dodati mleveno meso i pred kraj preliti sosom od paradajza i kuvati par minuta dok se ne zgusne. Dodati začine po želji (malo himalajske soli, bosiljak..) Sve ohladiti sjediniti."
     },
     "przenice": {
       "id": "przenice",
-      "name": {
-        "sr": "Pržene prženice sa sirom",
-        "en": "French Toast with Cheese"
-      },
+      "name": "Pržene prženice sa sirom",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Hleb",
-          "Jaje",
-          "Maslinovo ulje",
-          "Sir/Pavlaka"
-        ],
-        "en": [
-          "Bread",
-          "Egg",
-          "Olive oil",
-          "Cheese/Sour cream"
-        ]
-      },
-      "recipe": {
-        "sr": "3 parceta hleba umočiti u jaje, pržiti na maslinovom ulju i preko namazati Sirka ili pavlaku",
-        "en": "Dip 3 pieces of bread in egg, fry in olive oil and spread cheese or sour cream on top"
-      }
+      "ingredients": [
+        "Hleb",
+        "Jaje",
+        "Maslinovo ulje",
+        "Sir/Pavlaka"
+      ],
+      "recipe": "3 parceta hleba umočiti u jaje, pržiti na maslinovom ulju i preko namazati Sirka ili pavlaku"
     },
     "pizza": {
       "id": "pizza",
-      "name": {
-        "sr": "Domaća pizza",
-        "en": "Homemade Pizza"
-      },
+      "name": "Domaća pizza",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Integralno testo",
-          "Paradajz sos",
-          "Sir",
-          "Povrće"
-        ],
-        "en": [
-          "Whole wheat dough",
-          "Tomato sauce",
-          "Cheese",
-          "Vegetables"
-        ]
-      }
+      "ingredients": [
+        "Integralno testo",
+        "Paradajz sos",
+        "Sir",
+        "Povrće"
+      ]
     },
     "sendvic": {
       "id": "sendvic",
-      "name": {
-        "sr": "Sendvič sa sirnim namazom i pilećim prsima",
-        "en": "Sandwich with Cheese Spread and Chicken"
-      },
+      "name": "Sendvič sa sirnim namazom i pilećim prsima",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Hleb",
-          "Sirni namaz",
-          "Pileća prsa"
-        ],
-        "en": [
-          "Bread",
-          "Cheese spread",
-          "Chicken breast"
-        ]
-      }
+      "ingredients": [
+        "Hleb",
+        "Sirni namaz",
+        "Pileća prsa"
+      ]
     },
     "pitica_sir": {
       "id": "pitica_sir",
-      "name": {
-        "sr": "Pitica sa sirom",
-        "en": "Pie with Cheese"
-      },
+      "name": "Pitica sa sirom",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Tikvica",
-          "Jaje",
-          "Kisela pavlaka (50g)",
-          "Jogurt (100ml)",
-          "Mladi sir (50g)",
-          "Speltino brašno",
-          "Prašak za pecivo"
-        ],
-        "en": [
-          "Zucchini",
-          "Egg",
-          "Sour cream (50g)",
-          "Yogurt (100ml)",
-          "Young cheese (50g)",
-          "Spelt flour",
-          "Baking powder"
-        ]
-      },
-      "recipe": {
-        "sr": "1 manju tikvicu izrendati i dobro ocediti od vode. Umutiti jedno jaje, sjediniti sa tikvicoom, dodati 50g kisele pavlake, 100 ml jogurta, 50g mladog sira, 1 šolju speltinog brašna i 1/2 kesice praska za pecivo. izliti u tepsiju i peći u rerni na 200 stepeni oko 30 min.",
-        "en": "Grate 1 small zucchini and drain well. Beat one egg, combine with zucchini, add 50g sour cream, 100 ml yogurt, 50g young cheese, 1 cup spelt flour and 1/2 bag baking powder. Pour into baking pan and bake in oven at 200 degrees for about 30 min."
-      }
+      "ingredients": [
+        "Tikvica",
+        "Jaje",
+        "Kisela pavlaka (50g)",
+        "Jogurt (100ml)",
+        "Mladi sir (50g)",
+        "Speltino brašno",
+        "Prašak za pecivo"
+      ],
+      "recipe": "1 manju tikvicu izrendati i dobro ocediti od vode. Umutiti jedno jaje, sjediniti sa tikvicoom, dodati 50g kisele pavlake, 100 ml jogurta, 50g mladog sira, 1 šolju speltinog brašna i 1/2 kesice praska za pecivo. izliti u tepsiju i peći u rerni na 200 stepeni oko 30 min."
     },
     "palacinke": {
       "id": "palacinke",
-      "name": {
-        "sr": "Palačinke",
-        "en": "Pancakes"
-      },
+      "name": "Palačinke",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Jaje",
-          "Brašno",
-          "Pavlaka",
-          "Maslinovo ulje"
-        ],
-        "en": [
-          "Egg",
-          "Flour",
-          "Sour cream",
-          "Olive oil"
-        ]
-      }
+      "ingredients": [
+        "Jaje",
+        "Brašno",
+        "Pavlaka",
+        "Maslinovo ulje"
+      ]
     },
     "tikvica_riba": {
       "id": "tikvica_riba",
-      "name": {
-        "sr": "Tikvica + riblji filet + integralni hleb",
-        "en": "Zucchini + Fish Fillet + Whole Wheat Bread"
-      },
+      "name": "Tikvica + riblji filet + integralni hleb",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Tikvica",
-          "Riblji filet",
-          "Integralni hleb"
-        ],
-        "en": [
-          "Zucchini",
-          "Fish fillet",
-          "Whole wheat bread"
-        ]
-      }
+      "ingredients": [
+        "Tikvica",
+        "Riblji filet",
+        "Integralni hleb"
+      ]
     },
     "povrtna_corbica": {
       "id": "povrtna_corbica",
-      "name": {
-        "sr": "Povrtna čorbica + pileće meso",
-        "en": "Vegetable Soup + Chicken"
-      },
+      "name": "Povrtna čorbica + pileće meso",
       "category": "dinner",
-      "ingredients": {
-        "sr": [
-          "Šargarepa",
-          "Krompir",
-          "Tikvica",
-          "Crni luk",
-          "Pileće meso"
-        ],
-        "en": [
-          "Carrot",
-          "Potato",
-          "Zucchini",
-          "Onion",
-          "Chicken"
-        ]
-      }
+      "ingredients": [
+        "Šargarepa",
+        "Krompir",
+        "Tikvica",
+        "Crni luk",
+        "Pileće meso"
+      ]
     },
     "voce": {
       "id": "voce",
-      "name": {
-        "sr": "Voće",
-        "en": "Fruit"
-      },
+      "name": "Voće",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Sezonsko voće"
-        ],
-        "en": [
-          "Seasonal fruit"
-        ]
-      }
+      "ingredients": [
+        "Sezonsko voće"
+      ]
     },
     "grcki_jogurt_cokolada": {
       "id": "grcki_jogurt_cokolada",
-      "name": {
-        "sr": "Grčki jogurt sa crnom čokoladom",
-        "en": "Greek Yogurt with Dark Chocolate"
-      },
+      "name": "Grčki jogurt sa crnom čokoladom",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Grčki jogurt",
-          "Crna čokolada"
-        ],
-        "en": [
-          "Greek yogurt",
-          "Dark chocolate"
-        ]
-      }
+      "ingredients": [
+        "Grčki jogurt",
+        "Crna čokolada"
+      ]
     },
     "sirni_stapici": {
       "id": "sirni_stapici",
-      "name": {
-        "sr": "Sirni stapići",
-        "en": "Cheese Sticks"
-      },
+      "name": "Sirni stapići",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Sir",
-          "Brašno",
-          "Jaje",
-          "Povrće",
-          "Semenke"
-        ],
-        "en": [
-          "Cheese",
-          "Flour",
-          "Egg",
-          "Vegetables",
-          "Seeds"
-        ]
-      }
+      "ingredients": [
+        "Sir",
+        "Brašno",
+        "Jaje",
+        "Povrće",
+        "Semenke"
+      ]
     },
     "zdrave_kuglice": {
       "id": "zdrave_kuglice",
-      "name": {
-        "sr": "Zdrave kuglice",
-        "en": "Healthy Balls"
-      },
+      "name": "Zdrave kuglice",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Ovsene pahuljice (90g)",
-          "Kikiriki puter (45g)",
-          "Med (25g)",
-          "Tamna čokolada (30g)",
-          "Whey protein (30g)",
-          "Voda/Mleko"
-        ],
-        "en": [
-          "Oat flakes (90g)",
-          "Peanut butter (45g)",
-          "Honey (25g)",
-          "Dark chocolate (30g)",
-          "Whey protein (30g)",
-          "Water/Milk"
-        ]
-      },
-      "recipe": {
-        "sr": "90gr ovsenih pahuljica, 45 gr kikiriki putera, 25 gr meda, 30 tamne čokolade, 30 whey proteina i malo vode/mleka, umesati, sjediniti u kuglice i ostaviti u frižideru.",
-        "en": "90gr oat flakes, 45 gr peanut butter, 25 gr honey, 30 dark chocolate, 30 whey protein and a little water/milk, mix, form into balls and keep in refrigerator."
-      }
+      "ingredients": [
+        "Ovsene pahuljice (90g)",
+        "Kikiriki puter (45g)",
+        "Med (25g)",
+        "Tamna čokolada (30g)",
+        "Whey protein (30g)",
+        "Voda/Mleko"
+      ],
+      "recipe": "90gr ovsenih pahuljica, 45 gr kikiriki putera, 25 gr meda, 30 tamne čokolade, 30 whey proteina i malo vode/mleka, umesati, sjediniti u kuglice i ostaviti u frižideru."
     },
     "puding_avokado": {
       "id": "puding_avokado",
-      "name": {
-        "sr": "Puding sa avokadom i bananom",
-        "en": "Pudding with Avocado and Banana"
-      },
+      "name": "Puding sa avokadom i bananom",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Avokado",
-          "Banana",
-          "Grčki jogurt",
-          "Cimet"
-        ],
-        "en": [
-          "Avocado",
-          "Banana",
-          "Greek yogurt",
-          "Cinnamon"
-        ]
-      }
+      "ingredients": [
+        "Avokado",
+        "Banana",
+        "Grčki jogurt",
+        "Cimet"
+      ]
     },
     "hrskavi_keksici": {
       "id": "hrskavi_keksici",
-      "name": {
-        "sr": "Hrskavi keksići",
-        "en": "Crispy Cookies"
-      },
+      "name": "Hrskavi keksići",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Belanaca (2)",
-          "Mleveni lešnici (300g)",
-          "Med (1-2 kašike)"
-        ],
-        "en": [
-          "Egg whites (2)",
-          "Ground hazelnuts (300g)",
-          "Honey (1-2 spoons)"
-        ]
-      },
-      "recipe": {
-        "sr": "2 belanca umutiti u čvrst sneg, dodati mlevene lešnike (300gr) i med (1-2 kašike), lagano sjediniti sastojke. Napraviti loptice iređati u pleh i pritisnuti ih blago formirajući keksiće. Sušiti u zagrejanoj rerni na 100 stepeni 45 minuta.",
-        "en": "Beat 2 egg whites into stiff peaks, add ground hazelnuts (300gr) and honey (1-2 tablespoons), gently combine ingredients. Make balls and arrange in baking pan and press them lightly forming cookies. Dry in heated oven at 100 degrees for 45 minutes."
-      }
+      "ingredients": [
+        "Belanaca (2)",
+        "Mleveni lešnici (300g)",
+        "Med (1-2 kašike)"
+      ],
+      "recipe": "2 belanca umutiti u čvrst sneg, dodati mlevene lešnike (300gr) i med (1-2 kašike), lagano sjediniti sastojke. Napraviti loptice iređati u pleh i pritisnuti ih blago formirajući keksiće. Sušiti u zagrejanoj rerni na 100 stepeni 45 minuta."
     },
     "vocni_smuti": {
       "id": "vocni_smuti",
-      "name": {
-        "sr": "Voćni smuti",
-        "en": "Fruit Smoothie"
-      },
+      "name": "Voćni smuti",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Lesnikovo/bademovo mleko (50ml)",
-          "Borovnice",
-          "Jagode",
-          "Manga",
-          "Maline",
-          "Med"
-        ],
-        "en": [
-          "Hazelnut/almond milk (50ml)",
-          "Blueberries",
-          "Strawberries",
-          "Mango",
-          "Raspberries",
-          "Honey"
-        ]
-      },
-      "recipe": {
-        "sr": "50 ml lesnikovog/bademovog mleka, borovnice, jagode, manga, maline i malo meda...",
-        "en": "50 ml hazelnut/almond milk, blueberries, strawberries, mango, raspberries and a little honey..."
-      }
+      "ingredients": [
+        "Lesnikovo/bademovo mleko (50ml)",
+        "Borovnice",
+        "Jagode",
+        "Manga",
+        "Maline",
+        "Med"
+      ],
+      "recipe": "50 ml lesnikovog/bademovog mleka, borovnice, jagode, manga, maline i malo meda..."
     },
     "puding_jabuka": {
       "id": "puding_jabuka",
-      "name": {
-        "sr": "Puding sa jabukom i bademima",
-        "en": "Pudding with Apple and Almonds"
-      },
+      "name": "Puding sa jabukom i bademima",
       "category": "snack",
-      "ingredients": {
-        "sr": [
-          "Ovsene pahuljice",
-          "Banana",
-          "Jabuka",
-          "Bademi",
-          "Grčki jogurt",
-          "Cimet"
-        ],
-        "en": [
-          "Oat flakes",
-          "Banana",
-          "Apple",
-          "Almonds",
-          "Greek yogurt",
-          "Cinnamon"
-        ]
-      },
-      "recipe": {
-        "sr": "1 kašiku ovsenih pahuljica preliti vrelom vodom i ostaviti da odstoji oko 10 min. Bananu i jabuku staviti u blender, dodati ovsene, bademe i kašiku grčkog jogurta. Preko dodati malo cimeta.",
-        "en": "Pour boiling water over 1 tablespoon of oat flakes and leave to stand for about 10 min. Put banana and apple in blender, add oats, almonds and a tablespoon of Greek yogurt. Add a little cinnamon on top."
-      }
+      "ingredients": [
+        "Ovsene pahuljice",
+        "Banana",
+        "Jabuka",
+        "Bademi",
+        "Grčki jogurt",
+        "Cimet"
+      ],
+      "recipe": "1 kašiku ovsenih pahuljica preliti vrelom vodom i ostaviti da odstoji oko 10 min. Bananu i jabuku staviti u blender, dodati ovsene, bademe i kašiku grčkog jogurta. Preko dodati malo cimeta."
+    },
+    "vafli_banana": {
+      "id": "vafli_banana",
+      "name": "Vafli sa Bananom i Kikiriki Puterom",
+      "category": "breakfast",
+      "ingredients": [
+        "Vafli/bakin kolac",
+        "Banana",
+        "Kikiriki puter",
+        "Cimet"
+      ],
+      "recipe": "Na vafle/bakin kolac namazati tanak sloj kikiriki putera i preko iseckati bananu."
+    },
+    "muesli_jogurt": {
+      "id": "muesli_jogurt",
+      "name": "Domaći Musli sa Jogurtom",
+      "category": "breakfast",
+      "ingredients": [
+        "Ovsene pahuljice",
+        "Mleveni ili seckani orasi/bademi",
+        "Nar/borovnice",
+        "Grčki jogurt",
+        "Med"
+      ],
+      "recipe": "Pomešati ovsene pahuljice, sitno seckane orahe i voce. Preliti grčkim jogurtom i malo meda."
+    },
+    "pastrmka_blitva": {
+      "id": "pastrmka_blitva",
+      "name": "Pečena Pastrmka sa Blitvom i Krompirom",
+      "category": "lunch",
+      "ingredients": [
+        "Pastrmka file",
+        "Blitva",
+        "Mladi krompir",
+        "Limun",
+        "Maslinovo ulje"
+      ],
+      "recipe": "Ribu peći sa limunom. Blitvu i krompir skuvati odvojeno, poslužiti zajedno."
+    },
+    "curetina_batat": {
+      "id": "curetina_batat",
+      "name": "Ćuretina/piletina sa Pečenim Batatom i Brokolijem",
+      "category": "lunch",
+      "ingredients": [
+        "Ćureći/pileci file",
+        "Batat",
+        "Brokoli",
+        "Maslinovo ulje",
+        "Beli luk"
+      ],
+      "recipe": "Batat iseckati i peći. Ćuretinu/piletinu dinstati sa belim lukom. Brokoli kuvati na pari."
+    },
+    "pasta_piletina": {
+      "id": "pasta_piletina",
+      "name": "Integralna Pasta sa Piletinom i Cherry Paradajzom",
+      "category": "lunch",
+      "ingredients": [
+        "Integralna pasta",
+        "Pileći file",
+        "Cherry paradajz",
+        "Bosiljak",
+        "Parmezan"
+      ],
+      "recipe": "Pastu skuvati. Piletinu propržiti sa cherry paradajzom. Sjediniti i dodati bosiljak."
     }
   }
 }

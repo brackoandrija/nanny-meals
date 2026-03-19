@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odabir Obroka - Meal Selector</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f0f0f0;
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #e0e0e0;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .category-count {
+            background: rgba(255,255,255,0.3);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+        }
+
+        .meals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .meal-card {
+            border: 3px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .meal-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .meal-card.selected {
+            border-color: #4caf50;
+            background: #f0fff4;
+        }
+
+        .meal-checkbox {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 28px;
+            height: 28px;
+            cursor: pointer;
+        }
+
+        .meal-name-sr {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 5px;
+            padding-right: 40px;
+        }
+
+        .meal-name-en {
+            font-size: 1rem;
+            color: #999;
+            margin-bottom: 15px;
+        }
+
+        .meal-ingredients {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .meal-ingredients strong {
+            color: #333;
+        }
+
+        .result-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            display: none;
+        }
+
+        .result-section.show {
+            display: block;
+        }
+
+        .result-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .selected-list {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .selected-item {
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .selected-item:last-child {
+            border-bottom: none;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .meals-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .category-header {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍽️ Odabir Obroka</h1>
+        <p class="subtitle">Kliknite na obroke koje želite da zadržite / Click on meals you want to keep</p>
+
+        <div class="controls">
+            <button class="btn btn-primary" onclick="selectAll()">✓ Izaberi Sve / Select All</button>
+            <button class="btn btn-secondary" onclick="deselectAll()">✗ Poništi Sve / Deselect All</button>
+            <button class="btn btn-primary" onclick="showResults()">📋 Prikaži Rezultat / Show Results</button>
+        </div>
+
+        <!-- BREAKFAST SECTION -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-title">🥐 Doručak / Breakfast</div>
+                <div class="category-count"><span id="breakfast-count">0</span> / 10</div>
+            </div>
+            <div class="meals-grid" id="breakfast-grid"></div>
+        </div>
+
+        <!-- LUNCH SECTION -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-title">🍽️ Ručak / Lunch</div>
+                <div class="category-count"><span id="lunch-count">0</span> / 10</div>
+            </div>
+            <div class="meals-grid" id="lunch-grid"></div>
+        </div>
+
+        <!-- SNACK SECTION -->
+        <div class="category-section">
+            <div class="category-header">
+                <div class="category-title">🍎 Užina / Snack</div>
+                <div class="category-count"><span id="snack-count">0</span> / 10</div>
+            </div>
+            <div class="meals-grid" id="snack-grid"></div>
+        </div>
+
+        <!-- RESULTS SECTION -->
+        <div class="result-section" id="results">
+            <h2 class="result-title">✅ Izabrani Obroci / Selected Meals</h2>
+            <div class="selected-list" id="selected-list"></div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button class="btn btn-primary" onclick="copyToClipboard()">📋 Kopiraj Listu / Copy List</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const meals = {
+            breakfast: [
+                {
+                    id: 'vafli_banana',
+                    nameSr: 'Integralni Vafli sa Bananom i Kikiriki Puterom',
+                    nameEn: 'Whole Wheat Waffles with Banana & Peanut Butter',
+                    ingredients: 'Integralni vafli, banana, kikiriki puter, cimet'
+                },
+                {
+                    id: 'ovsena_jabuka',
+                    nameSr: 'Ovsena Kaša sa Jabukom i Orasima',
+                    nameEn: 'Oatmeal with Apple & Walnuts',
+                    ingredients: 'Ovsene pahuljice, jabuka, orasi, med, cimet'
+                },
+                {
+                    id: 'omlet_spanac',
+                    nameSr: 'Spanaćeva Omlet sa Fetom',
+                    nameEn: 'Spinach Omelet with Feta',
+                    ingredients: 'Jaja (2), mladi spanać, feta sir, maslinovo ulje'
+                },
+                {
+                    id: 'muesli_jogurt',
+                    nameSr: 'Domaći Muesli sa Jogurtom',
+                    nameEn: 'Homemade Muesli with Yogurt',
+                    ingredients: 'Ovsene pahuljice, orasi, sušene kajsije, grčki jogurt, med'
+                },
+                {
+                    id: 'pogacica_sir',
+                    nameSr: 'Integralna Pogačica sa Sirom i Šunkom',
+                    nameEn: 'Whole Wheat Bun with Cheese & Ham',
+                    ingredients: 'Integralno brašno, jogurt, mladi sir, pureća šunka'
+                },
+                {
+                    id: 'chia_jagode',
+                    nameSr: 'Chia Puding sa Jagodama',
+                    nameEn: 'Chia Pudding with Strawberries',
+                    ingredients: 'Chia semenke, mleko, jagode, med'
+                },
+                {
+                    id: 'kajgana_paradajz',
+                    nameSr: 'Hrono Krem Kajgana sa Cherry Paradajzom',
+                    nameEn: 'Cream Scrambled Eggs with Cherry Tomatoes',
+                    ingredients: 'Jaja (2), pavlaka, cherry paradajz, rukola'
+                },
+                {
+                    id: 'bundeva_jogurt',
+                    nameSr: 'Pečena Bundeva sa Cimetom i Jogurtom',
+                    nameEn: 'Roasted Pumpkin with Cinnamon & Yogurt',
+                    ingredients: 'Hokkaido bundeva, cimet, grčki jogurt, bademi'
+                },
+                {
+                    id: 'sendvic_avokado',
+                    nameSr: 'Mini Sendviči sa Avokadom i Jajetom',
+                    nameEn: 'Mini Sandwiches with Avocado & Egg',
+                    ingredients: 'Integralni hleb, avokado, kuvano jaje, limun'
+                },
+                {
+                    id: 'palacinke_voce',
+                    nameSr: 'Pirinčane Palačinke sa Šumskim Voćem',
+                    nameEn: 'Rice Pancakes with Forest Berries',
+                    ingredients: 'Pirinčano brašno, jaje, mleko, borovnice, maline'
+                }
+            ],
+            lunch: [
+                {
+                    id: 'cufte_rizoto',
+                    nameSr: 'Ćureći Ćufte sa Integralnim Rižotom',
+                    nameEn: 'Turkey Meatballs with Brown Rice Risotto',
+                    ingredients: 'Ćureće meso, integralni pirinač, crni luk, šargarepa, tikvica'
+                },
+                {
+                    id: 'potaz_socivo',
+                    nameSr: 'Potaž od Sočiva sa Spanaćem',
+                    nameEn: 'Lentil Potage with Spinach',
+                    ingredients: 'Crveno sočivo, spanać, krompir, crni luk, pavlaka'
+                },
+                {
+                    id: 'pastrmka_blitva',
+                    nameSr: 'Pečena Pastrmka sa Blitvom i Krompirom',
+                    nameEn: 'Baked Trout with Swiss Chard & Potatoes',
+                    ingredients: 'Pastrmka file, blitva, mladi krompir, limun, maslinovo ulje'
+                },
+                {
+                    id: 'piletina_bundeva',
+                    nameSr: 'Piletina u Sosu od Bundeve i Curry-ja',
+                    nameEn: 'Chicken in Pumpkin Curry Sauce',
+                    ingredients: 'Pileći file, hokkaido bundeva, kokosovo mleko, curry, basmati pirinač'
+                },
+                {
+                    id: 'curetina_batat',
+                    nameSr: 'Ćuretina sa Pečenim Batatom i Brokolijem',
+                    nameEn: 'Turkey with Roasted Sweet Potato & Broccoli',
+                    ingredients: 'Ćureći file, batat, brokoli, maslinovo ulje, beli luk'
+                },
+                {
+                    id: 'pasta_piletina',
+                    nameSr: 'Integralna Pasta sa Piletinom i Cherry Paradajzom',
+                    nameEn: 'Whole Wheat Pasta with Chicken & Cherry Tomatoes',
+                    ingredients: 'Integralna pasta, pileći file, cherry paradajz, bosiljak, parmezan'
+                },
+                {
+                    id: 'riba_sargarepa',
+                    nameSr: 'Riblji Fileti u Sosu od Šargarepe',
+                    nameEn: 'Fish Fillets in Carrot Sauce',
+                    ingredients: 'Beli riblji file (grgeč), šargarepa, crni luk, pavlaka, peršun'
+                },
+                {
+                    id: 'quinoa_povrce',
+                    nameSr: 'Quinoa sa Pečenim Povrćem i Piletinom',
+                    nameEn: 'Quinoa with Roasted Vegetables & Chicken',
+                    ingredients: 'Quinoa, pileći file, paprika, tikvica, plavi patlidžan, feta'
+                },
+                {
+                    id: 'gulas_pasta',
+                    nameSr: 'Juneći Gulaš sa Integralnim Testeninama',
+                    nameEn: 'Beef Goulash with Whole Wheat Pasta',
+                    ingredients: 'Juneće meso, crni luk, paradajz, paprika, aleva paprika, integralna pasta'
+                },
+                {
+                    id: 'curetina_kuskus',
+                    nameSr: 'Ćuretina sa Pečenom Tikvicom i Kus-kusom',
+                    nameEn: 'Turkey with Roasted Zucchini & Couscous',
+                    ingredients: 'Ćureći file, tikvica, integralni kus-kus, čeri paradajz, feta'
+                }
+            ],
+            snack: [
+                {
+                    id: 'kuglice_urme',
+                    nameSr: 'Energetske Kuglice od Urmi i Oraha',
+                    nameEn: 'Energy Balls with Dates & Walnuts',
+                    ingredients: 'Urme, orasi, kakao, kokos'
+                },
+                {
+                    id: 'mafini_banana',
+                    nameSr: 'Mini Mafini sa Bananom i Borovnicama',
+                    nameEn: 'Mini Muffins with Banana & Blueberries',
+                    ingredients: 'Ovseno brašno, banana, borovnice, jaje, med'
+                },
+                {
+                    id: 'hummus_sargarepa',
+                    nameSr: 'Domaći Hummus sa Šargarepom',
+                    nameEn: 'Homemade Hummus with Carrot Sticks',
+                    ingredients: 'Leblebije, tahini, limun, beli luk, šargarepa (štapići)'
+                },
+                {
+                    id: 'avokado_mus',
+                    nameSr: 'Avokado Čokoladni Mus',
+                    nameEn: 'Avocado Chocolate Mousse',
+                    ingredients: 'Avokado, kakao, banana, med'
+                },
+                {
+                    id: 'pecene_jabuke',
+                    nameSr: 'Pečene Jabuke sa Cimetom i Orasima',
+                    nameEn: 'Baked Apples with Cinnamon & Walnuts',
+                    ingredients: 'Jabuke, orasi, cimet, med'
+                },
+                {
+                    id: 'granola_bar',
+                    nameSr: 'Integralni Granola Barovi',
+                    nameEn: 'Whole Grain Granola Bars',
+                    ingredients: 'Ovsene pahuljice, orasi, semenke, med, kikiriki puter'
+                },
+                {
+                    id: 'koktel_jagode',
+                    nameSr: 'Koktel od Banana i Jagoda',
+                    nameEn: 'Banana & Strawberry Smoothie',
+                    ingredients: 'Banana, jagode, grčki jogurt, chia semenke'
+                },
+                {
+                    id: 'sir_prutici',
+                    nameSr: 'Sir Prutići sa Susamom',
+                    nameEn: 'Cheese Sticks with Sesame',
+                    ingredients: 'Integralne kore za pitu, feta sir, jaje, susam'
+                },
+                {
+                    id: 'badem_puding',
+                    nameSr: 'Bademov Puding sa Malinama',
+                    nameEn: 'Almond Pudding with Raspberries',
+                    ingredients: 'Bademovo mleko, chia semenke, maline, vanila'
+                },
+                {
+                    id: 'vocne_rolnice',
+                    nameSr: 'Domaće Voćne Rolnice',
+                    nameEn: 'Homemade Fruit Rolls',
+                    ingredients: 'Pirinčani papir, kajsije, maline, badem puter'
+                }
+            ]
+        };
+
+        let selected = {
+            breakfast: new Set(),
+            lunch: new Set(),
+            snack: new Set()
+        };
+
+        function renderMeals() {
+            ['breakfast', 'lunch', 'snack'].forEach(category => {
+                const grid = document.getElementById(`${category}-grid`);
+                grid.innerHTML = '';
+
+                meals[category].forEach(meal => {
+                    const card = document.createElement('div');
+                    card.className = 'meal-card';
+                    card.id = `card-${meal.id}`;
+                    card.onclick = () => toggleMeal(category, meal.id);
+
+                    card.innerHTML = `
+                        <input type="checkbox" class="meal-checkbox" id="check-${meal.id}"
+                               onchange="toggleMeal('${category}', '${meal.id}')">
+                        <div class="meal-name-sr">${meal.nameSr}</div>
+                        <div class="meal-name-en">${meal.nameEn}</div>
+                        <div class="meal-ingredients"><strong>Sastojci:</strong> ${meal.ingredients}</div>
+                    `;
+
+                    grid.appendChild(card);
+                });
+
+                updateCount(category);
+            });
+        }
+
+        function toggleMeal(category, mealId) {
+            const checkbox = document.getElementById(`check-${mealId}`);
+            const card = document.getElementById(`card-${mealId}`);
+
+            if (selected[category].has(mealId)) {
+                selected[category].delete(mealId);
+                checkbox.checked = false;
+                card.classList.remove('selected');
+            } else {
+                selected[category].add(mealId);
+                checkbox.checked = true;
+                card.classList.add('selected');
+            }
+
+            updateCount(category);
+        }
+
+        function updateCount(category) {
+            document.getElementById(`${category}-count`).textContent = selected[category].size;
+        }
+
+        function selectAll() {
+            ['breakfast', 'lunch', 'snack'].forEach(category => {
+                meals[category].forEach(meal => {
+                    selected[category].add(meal.id);
+                    document.getElementById(`check-${meal.id}`).checked = true;
+                    document.getElementById(`card-${meal.id}`).classList.add('selected');
+                });
+                updateCount(category);
+            });
+        }
+
+        function deselectAll() {
+            ['breakfast', 'lunch', 'snack'].forEach(category => {
+                meals[category].forEach(meal => {
+                    selected[category].delete(meal.id);
+                    document.getElementById(`check-${meal.id}`).checked = false;
+                    document.getElementById(`card-${meal.id}`).classList.remove('selected');
+                });
+                updateCount(category);
+            });
+        }
+
+        function showResults() {
+            const resultsList = document.getElementById('selected-list');
+            resultsList.innerHTML = '';
+
+            let hasSelected = false;
+
+            ['breakfast', 'lunch', 'snack'].forEach(category => {
+                const categoryName = category === 'breakfast' ? 'Doručak/Breakfast' :
+                                   category === 'lunch' ? 'Ručak/Lunch' : 'Užina/Snack';
+
+                if (selected[category].size > 0) {
+                    hasSelected = true;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.innerHTML = `<h3 style="margin: 20px 0 10px 0; color: #667eea;">${categoryName} (${selected[category].size})</h3>`;
+                    resultsList.appendChild(categoryDiv);
+
+                    selected[category].forEach(mealId => {
+                        const meal = meals[category].find(m => m.id === mealId);
+                        const item = document.createElement('div');
+                        item.className = 'selected-item';
+                        item.innerHTML = `
+                            <div>
+                                <strong>${meal.nameSr}</strong><br>
+                                <small>${meal.nameEn}</small>
+                            </div>
+                            <div style="text-align: right; color: #999; font-size: 0.9rem;">✓</div>
+                        `;
+                        resultsList.appendChild(item);
+                    });
+                }
+            });
+
+            if (!hasSelected) {
+                resultsList.innerHTML = '<p style="text-align: center; color: #999;">Niste izabrali nijedan obrok / No meals selected</p>';
+            }
+
+            document.getElementById('results').classList.add('show');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyToClipboard() {
+            let text = 'IZABRANI OBROCI / SELECTED MEALS\n\n';
+
+            ['breakfast', 'lunch', 'snack'].forEach(category => {
+                const categoryName = category === 'breakfast' ? 'DORUČAK/BREAKFAST' :
+                                   category === 'lunch' ? 'RUČAK/LUNCH' : 'UŽINA/SNACK';
+
+                if (selected[category].size > 0) {
+                    text += `${categoryName} (${selected[category].size}):\n`;
+                    selected[category].forEach(mealId => {
+                        const meal = meals[category].find(m => m.id === mealId);
+                        text += `- ${meal.nameSr} / ${meal.nameEn}\n`;
+                    });
+                    text += '\n';
+                }
+            });
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Lista je kopirana! / List copied to clipboard!');
+            });
+        }
+
+        // Initialize
+        renderMeals();
+    </script>
+</body>
+</html>

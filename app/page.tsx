@@ -4,16 +4,15 @@ import { useState, useEffect } from 'react'
 import mealsData from '@/data/meals.json'
 import currentMealData from '@/data/current-meal.json'
 
-type Language = 'sr' | 'en'
 type Tab = 'today' | 'all'
 type Category = 'all' | 'breakfast' | 'lunch' | 'dinner' | 'snack'
 
 interface Meal {
   id: string
-  name: { sr: string; en: string }
+  name: string
   category: string
-  ingredients: { sr: string[]; en: string[] }
-  recipe?: { sr: string; en: string }
+  ingredients: string[]
+  recipe?: string
 }
 
 interface LunchHistory {
@@ -22,71 +21,7 @@ interface LunchHistory {
   daysCount: number
 }
 
-const translations = {
-  sr: {
-    title: 'Teki Obroci',
-    todayTab: 'Danas',
-    allTab: 'Svi Obroci',
-    todayMeal: 'Današnji Obrok',
-    ingredients: 'Sastojci',
-    recipe: 'Recept',
-    allMeals: 'Svi Obroci',
-    newLunch: 'Novi Ručak',
-    confirmNewLunch: 'Da li ste sigurni da želite novi ručak? Već ste završili dva dana zaredom sa ovim obrokom.',
-    yes: 'Da',
-    no: 'Ne',
-    lunchDay: 'Dan',
-    days: {
-      monday: 'Ponedeljak',
-      tuesday: 'Utorak',
-      wednesday: 'Sreda',
-      thursday: 'Četvrtak',
-      friday: 'Petak',
-      saturday: 'Subota',
-      sunday: 'Nedelja'
-    },
-    categories: {
-      all: 'Sve',
-      breakfast: 'Doručak',
-      lunch: 'Ručak',
-      dinner: 'Večera',
-      snack: 'Užina'
-    }
-  },
-  en: {
-    title: 'Teki Meals',
-    todayTab: 'Today',
-    allTab: 'All Meals',
-    todayMeal: "Today's Meal",
-    ingredients: 'Ingredients',
-    recipe: 'Recipe',
-    allMeals: 'All Meals',
-    newLunch: 'New Lunch',
-    confirmNewLunch: 'Are you sure you want a new lunch? You already finished two days in a row with this meal.',
-    yes: 'Yes',
-    no: 'No',
-    lunchDay: 'Day',
-    days: {
-      monday: 'Monday',
-      tuesday: 'Tuesday',
-      wednesday: 'Wednesday',
-      thursday: 'Thursday',
-      friday: 'Friday',
-      saturday: 'Saturday',
-      sunday: 'Sunday'
-    },
-    categories: {
-      all: 'All',
-      breakfast: 'Breakfast',
-      lunch: 'Lunch',
-      dinner: 'Dinner',
-      snack: 'Snack'
-    }
-  }
-}
-
 export default function Home() {
-  const [lang, setLang] = useState<Language>('sr')
   const [tab, setTab] = useState<Tab>('today')
   const [selectedMeal, setSelectedMeal] = useState<Meal | null>(null)
   const [currentMeal, setCurrentMeal] = useState<Meal | null>(null)
@@ -96,14 +31,22 @@ export default function Home() {
   const [todayDay, setTodayDay] = useState('')
   const [mealHistory, setMealHistory] = useState<string[]>([])
 
-  const t = translations[lang]
   const meals = Object.values(mealsData.meals) as Meal[]
+
+  const dayNames = ['Nedelja', 'Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak', 'Subota']
+
+  const categoryNames = {
+    all: 'Sve',
+    breakfast: 'Doručak',
+    lunch: 'Ručak',
+    dinner: 'Večera',
+    snack: 'Užina'
+  }
 
   // Get today's day name
   useEffect(() => {
-    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
     const today = new Date().getDay()
-    setTodayDay(days[today])
+    setTodayDay(dayNames[today])
   }, [])
 
   useEffect(() => {
@@ -210,21 +153,7 @@ export default function Home() {
   return (
     <div className="container">
       <div className="header">
-        <h1>{t.title}</h1>
-        <div className="lang-toggle">
-          <button
-            className={`lang-btn ${lang === 'sr' ? 'active' : ''}`}
-            onClick={() => setLang('sr')}
-          >
-            Srpski
-          </button>
-          <button
-            className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
-            onClick={() => setLang('en')}
-          >
-            English
-          </button>
-        </div>
+        <h1>Teki Obroci</h1>
       </div>
 
       <div className="tabs">
@@ -232,13 +161,13 @@ export default function Home() {
           className={`tab ${tab === 'today' ? 'active' : ''}`}
           onClick={() => setTab('today')}
         >
-          {t.todayTab}
+          Danas
         </button>
         <button
           className={`tab ${tab === 'all' ? 'active' : ''}`}
           onClick={() => setTab('all')}
         >
-          {t.allTab}
+          Svi Obroci
         </button>
       </div>
 
@@ -247,24 +176,24 @@ export default function Home() {
           <div className="today-info">
             {todayDay && (
               <div className="today-day">
-                {t.days[todayDay as keyof typeof t.days]}
+                {todayDay}
               </div>
             )}
           </div>
 
           <div className="card">
-            <h2 className="meal-title">{currentMeal.name[lang]}</h2>
+            <h2 className="meal-title">{currentMeal.name}</h2>
 
             {currentMeal.category === 'lunch' && lunchHistory && (
               <div className="lunch-day-counter">
-                {t.lunchDay} {lunchHistory.daysCount}/2
+                Dan {lunchHistory.daysCount}/2
               </div>
             )}
 
             <div>
-              <h3 className="ingredients-title">{t.ingredients}:</h3>
+              <h3 className="ingredients-title">Sastojci:</h3>
               <ul className="ingredients-list">
-                {currentMeal.ingredients[lang].map((ingredient, index) => (
+                {currentMeal.ingredients.map((ingredient, index) => (
                   <li key={index}>{ingredient}</li>
                 ))}
               </ul>
@@ -272,15 +201,15 @@ export default function Home() {
 
             {currentMeal.recipe && (
               <div className="recipe-section">
-                <h3 className="recipe-title">{t.recipe}:</h3>
-                <p className="recipe-text">{currentMeal.recipe[lang]}</p>
+                <h3 className="recipe-title">Recept:</h3>
+                <p className="recipe-text">{currentMeal.recipe}</p>
               </div>
             )}
           </div>
 
           {currentMeal.category === 'lunch' && (
             <button className="new-lunch-btn" onClick={handleNewLunch}>
-              {t.newLunch}
+              Novi Ručak
             </button>
           )}
         </>
@@ -289,13 +218,13 @@ export default function Home() {
       {tab === 'all' && (
         <>
           <div className="category-filter">
-            {Object.keys(t.categories).map((cat) => (
+            {Object.keys(categoryNames).map((cat) => (
               <button
                 key={cat}
                 className={`filter-btn ${category === cat ? 'active' : ''}`}
                 onClick={() => setCategory(cat as Category)}
               >
-                {t.categories[cat as keyof typeof t.categories]}
+                {categoryNames[cat as keyof typeof categoryNames]}
               </button>
             ))}
           </div>
@@ -307,12 +236,12 @@ export default function Home() {
                 className="meal-card"
                 onClick={() => setSelectedMeal(meal)}
               >
-                <h3 className="meal-card-title">{meal.name[lang]}</h3>
+                <h3 className="meal-card-title">{meal.name}</h3>
                 <span className="meal-card-category">
-                  {t.categories[meal.category as keyof typeof t.categories]}
+                  {categoryNames[meal.category as keyof typeof categoryNames]}
                 </span>
                 <div className="meal-card-ingredients">
-                  {meal.ingredients[lang].join(', ')}
+                  {meal.ingredients.join(', ')}
                 </div>
               </div>
             ))}
@@ -326,12 +255,12 @@ export default function Home() {
             <button className="modal-close" onClick={() => setSelectedMeal(null)}>
               ×
             </button>
-            <h2 className="meal-title">{selectedMeal.name[lang]}</h2>
+            <h2 className="meal-title">{selectedMeal.name}</h2>
 
             <div>
-              <h3 className="ingredients-title">{t.ingredients}:</h3>
+              <h3 className="ingredients-title">Sastojci:</h3>
               <ul className="ingredients-list">
-                {selectedMeal.ingredients[lang].map((ingredient, index) => (
+                {selectedMeal.ingredients.map((ingredient, index) => (
                   <li key={index}>{ingredient}</li>
                 ))}
               </ul>
@@ -339,8 +268,8 @@ export default function Home() {
 
             {selectedMeal.recipe && (
               <div className="recipe-section">
-                <h3 className="recipe-title">{t.recipe}:</h3>
-                <p className="recipe-text">{selectedMeal.recipe[lang]}</p>
+                <h3 className="recipe-title">Recept:</h3>
+                <p className="recipe-text">{selectedMeal.recipe}</p>
               </div>
             )}
           </div>
@@ -350,13 +279,15 @@ export default function Home() {
       {showConfirm && (
         <div className="modal-overlay" onClick={() => setShowConfirm(false)}>
           <div className="confirm-modal" onClick={(e) => e.stopPropagation()}>
-            <h3 className="confirm-title">{t.confirmNewLunch}</h3>
+            <h3 className="confirm-title">
+              Da li ste sigurni da želite novi ručak? Već ste završili dva dana zaredom sa ovim obrokom.
+            </h3>
             <div className="confirm-buttons">
               <button className="confirm-btn confirm-yes" onClick={changeLunch}>
-                {t.yes}
+                Da
               </button>
               <button className="confirm-btn confirm-no" onClick={() => setShowConfirm(false)}>
-                {t.no}
+                Ne
               </button>
             </div>
           </div>

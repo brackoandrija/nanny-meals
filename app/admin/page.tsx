@@ -5,9 +5,9 @@ import mealsData from '@/data/meals.json'
 
 interface Meal {
   id: string
-  name: { sr: string; en: string }
+  name: string
   category: string
-  ingredients: { sr: string[]; en: string[] }
+  ingredients: string[]
 }
 
 export default function Admin() {
@@ -45,7 +45,7 @@ export default function Admin() {
       sessionStorage.setItem('adminAuth', 'true')
       setError('')
     } else {
-      setError('Pogrešna lozinka / Wrong password')
+      setError('Pogrešna lozinka')
     }
   }
 
@@ -63,7 +63,7 @@ export default function Admin() {
     localStorage.setItem('lunchHistory', JSON.stringify(newHistory))
 
     setCurrentLunch(meal)
-    setMessage(`✓ Obrok postavljen: ${meal.name.sr} / Meal set: ${meal.name.en}`)
+    setMessage(`✓ Obrok postavljen: ${meal.name}`)
 
     setTimeout(() => {
       setMessage('')
@@ -73,6 +73,13 @@ export default function Admin() {
   const lunchMeals = meals.filter(m => m.category === 'lunch')
   const displayMeals = filter === 'lunch' ? lunchMeals : meals
 
+  const categoryNames = {
+    breakfast: 'Doručak',
+    lunch: 'Ručak',
+    dinner: 'Večera',
+    snack: 'Užina'
+  }
+
   if (!isAuthenticated) {
     return (
       <div className="admin-container">
@@ -81,18 +88,18 @@ export default function Admin() {
           {error && <div className="error-message">{error}</div>}
           <form onSubmit={handleLogin}>
             <div className="form-group">
-              <label className="form-label">Password / Lozinka</label>
+              <label className="form-label">Lozinka</label>
               <input
                 type="password"
                 className="form-input"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter password"
+                placeholder="Unesi lozinku"
                 autoFocus
               />
             </div>
             <button type="submit" className="btn">
-              Login
+              Prijavi se
             </button>
           </form>
         </div>
@@ -104,41 +111,40 @@ export default function Admin() {
     <div className="admin-panel">
       <div className="admin-header">
         <h1 className="admin-main-title">Admin Panel</h1>
-        <a href="/" className="back-link">← Nazad / Back</a>
+        <a href="/" className="back-link">← Nazad</a>
       </div>
 
       {message && <div className="success-message-floating">{message}</div>}
 
       <div className="current-lunch-display">
-        <h2 className="section-title">Trenutni Ručak / Current Lunch:</h2>
+        <h2 className="section-title">Trenutni Ručak:</h2>
         {currentLunch ? (
           <div className="current-lunch-card">
-            <h3>{currentLunch.name.sr}</h3>
-            <p className="en-name">{currentLunch.name.en}</p>
+            <h3>{currentLunch.name}</h3>
             <div className="ingredients-preview">
-              {currentLunch.ingredients.sr.slice(0, 4).join(', ')}
-              {currentLunch.ingredients.sr.length > 4 && '...'}
+              {currentLunch.ingredients.slice(0, 4).join(', ')}
+              {currentLunch.ingredients.length > 4 && '...'}
             </div>
           </div>
         ) : (
-          <p className="no-lunch-text">Nema postavljenog ručka / No lunch set</p>
+          <p className="no-lunch-text">Nema postavljenog ručka</p>
         )}
       </div>
 
       <div className="filter-section">
-        <h2 className="section-title">Izaberi Novi Ručak / Select New Lunch:</h2>
+        <h2 className="section-title">Izaberi Novi Ručak:</h2>
         <div className="filter-buttons">
           <button
             className={`filter-toggle ${filter === 'lunch' ? 'active' : ''}`}
             onClick={() => setFilter('lunch')}
           >
-            Samo Ručkovi / Lunches Only ({lunchMeals.length})
+            Samo Ručkovi ({lunchMeals.length})
           </button>
           <button
             className={`filter-toggle ${filter === 'all' ? 'active' : ''}`}
             onClick={() => setFilter('all')}
           >
-            Svi Obroci / All Meals ({meals.length})
+            Svi Obroci ({meals.length})
           </button>
         </div>
       </div>
@@ -151,22 +157,21 @@ export default function Admin() {
             onClick={() => handleSelectLunch(meal)}
           >
             {currentLunch?.id === meal.id && (
-              <div className="selected-badge">✓ Trenutno / Current</div>
+              <div className="selected-badge">✓ Trenutno</div>
             )}
-            <h3 className="admin-meal-title">{meal.name.sr}</h3>
-            <p className="admin-meal-subtitle">{meal.name.en}</p>
+            <h3 className="admin-meal-title">{meal.name}</h3>
             <div className="admin-meal-category">
-              {meal.category === 'lunch' && '🍽️ Ručak / Lunch'}
-              {meal.category === 'breakfast' && '🥐 Doručak / Breakfast'}
-              {meal.category === 'dinner' && '🌙 Večera / Dinner'}
-              {meal.category === 'snack' && '🍎 Užina / Snack'}
+              {meal.category === 'lunch' && '🍽️ Ručak'}
+              {meal.category === 'breakfast' && '🥐 Doručak'}
+              {meal.category === 'dinner' && '🌙 Večera'}
+              {meal.category === 'snack' && '🍎 Užina'}
             </div>
             <div className="admin-ingredients">
-              {meal.ingredients.sr.slice(0, 3).map((ing, i) => (
+              {meal.ingredients.slice(0, 3).map((ing, i) => (
                 <span key={i} className="ingredient-tag">{ing}</span>
               ))}
-              {meal.ingredients.sr.length > 3 && (
-                <span className="more-tag">+{meal.ingredients.sr.length - 3}</span>
+              {meal.ingredients.length > 3 && (
+                <span className="more-tag">+{meal.ingredients.length - 3}</span>
               )}
             </div>
           </div>
