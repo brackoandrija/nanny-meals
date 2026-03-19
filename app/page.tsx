@@ -138,11 +138,8 @@ export default function Home() {
   }
 
   const handleNewLunch = () => {
-    if (lunchHistory && lunchHistory.daysCount >= 2) {
-      setShowConfirm(true)
-    } else {
-      changeLunch()
-    }
+    // Always show confirmation
+    setShowConfirm(true)
   }
 
   const changeLunch = () => {
@@ -388,15 +385,33 @@ export default function Home() {
       {showConfirm && (
         <div className="modal-overlay" onClick={() => setShowConfirm(false)}>
           <div className="confirm-modal" onClick={(e) => e.stopPropagation()}>
-            <h3 className="confirm-title">
-              Da li ste sigurni da želite novi ručak? Već ste završili dva dana zaredom sa ovim obrokom.
-            </h3>
+            {lunchHistory && lunchHistory.daysCount >= 2 ? (
+              <>
+                <div className="confirm-icon">✓</div>
+                <h3 className="confirm-title">
+                  Odlično! Završili ste 2 dana zaredom sa ovim obrokom.
+                </h3>
+                <p className="confirm-subtitle">
+                  Da li želite da promenite ručak ili da nastavite sa istim?
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="confirm-icon">🤔</div>
+                <h3 className="confirm-title">
+                  Da li ne želite ovaj obrok danas?
+                </h3>
+                <p className="confirm-subtitle">
+                  Možete izabrati drugi ručak ako vam ovaj ne odgovara.
+                </p>
+              </>
+            )}
             <div className="confirm-buttons">
               <button className="confirm-btn confirm-yes" onClick={changeLunch}>
-                Da
+                {lunchHistory && lunchHistory.daysCount >= 2 ? 'Promeni Ručak' : 'Da, Drugi Obrok'}
               </button>
               <button className="confirm-btn confirm-no" onClick={() => setShowConfirm(false)}>
-                Ne
+                {lunchHistory && lunchHistory.daysCount >= 2 ? 'Nastavi Sa Ovim' : 'Ne, Ovaj je OK'}
               </button>
             </div>
           </div>
