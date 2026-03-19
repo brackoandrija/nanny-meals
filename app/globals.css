@@ -1080,3 +1080,160 @@ body {
     font-size: 3.5rem;
   }
 }
+
+/* INGREDIENT INSTRUCTIONS - MAKE IT SUPER OBVIOUS */
+.ingredients-instruction {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+}
+
+.instruction-icon {
+  font-size: 2.5rem;
+  animation: pointDown 1.5s ease-in-out infinite;
+}
+
+@keyframes pointDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.instruction-text {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.instruction-arrow {
+  position: absolute;
+  right: -10px;
+  top: 100%;
+  margin-top: 5px;
+  background: #ff9800;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(255, 152, 0, 0.4);
+  animation: bounce 2s ease-in-out infinite;
+  white-space: nowrap;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* PULSE ANIMATION FOR FIRST INGREDIENT */
+.ingredient-item.pulse {
+  animation: pulseGlow 2s ease-in-out infinite;
+  border: 3px solid #ff9800 !important;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 15px rgba(255, 152, 0, 0);
+  }
+}
+
+/* Make checkbox more obvious when not checked */
+.ingredient-item:not(.checked) .checkbox {
+  border-color: #ff9800;
+  border-width: 4px;
+}
+
+.ingredient-item:not(.checked):hover .checkbox {
+  background: #fff3e0;
+  transform: scale(1.1);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .ingredients-instruction {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .instruction-icon {
+    font-size: 2rem;
+  }
+
+  .instruction-text {
+    font-size: 1rem;
+  }
+
+  .instruction-arrow {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+}
+
+/* RESET BUTTON */
+.reset-checks-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #f0f0f0;
+  color: #666;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.reset-checks-btn:hover {
+  background: #e0e0e0;
+  border-color: #999;
+  transform: scale(1.05);
+}
+
+/* Make ingredients SUPER obvious they're clickable */
+.ingredient-item {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.ingredient-item::after {
+  content: '👆 Klikni';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ingredient-item:not(.checked):hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .ingredient-item::after {
+    display: none;
+  }
+}

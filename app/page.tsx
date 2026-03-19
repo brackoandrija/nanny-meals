@@ -246,11 +246,21 @@ export default function Home() {
             <div className="ingredients-section">
               <h3 className="section-title-big">Sastojci:</h3>
 
+              <div className="ingredients-instruction">
+                <div className="instruction-icon">👆</div>
+                <div className="instruction-text">
+                  Klikni na svaki sastojak da proveriš da li ga imaš
+                </div>
+                {checkedIngredients.size === 0 && (
+                  <div className="instruction-arrow">← Probaj ovde</div>
+                )}
+              </div>
+
               <div className="ingredient-checklist">
                 {currentMeal.ingredients.map((ingredient, index) => (
                   <div
                     key={index}
-                    className={`ingredient-item ${checkedIngredients.has(index) ? 'checked' : ''}`}
+                    className={`ingredient-item ${checkedIngredients.has(index) ? 'checked' : ''} ${checkedIngredients.size === 0 && index === 0 ? 'pulse' : ''}`}
                     onClick={() => toggleIngredient(index)}
                   >
                     <div className="checkbox">
@@ -263,7 +273,20 @@ export default function Home() {
 
               <div className={`ingredients-status ${allIngredientsChecked ? 'complete' : 'incomplete'}`}>
                 {allIngredientsChecked ? (
-                  <span className="status-complete">✓ Imate sve!</span>
+                  <>
+                    <span className="status-complete">✓ Imate sve!</span>
+                    <button
+                      className="reset-checks-btn"
+                      onClick={() => {
+                        setCheckedIngredients(new Set())
+                        if (currentMeal) {
+                          localStorage.removeItem(`checks_${currentMeal.id}`)
+                        }
+                      }}
+                    >
+                      Resetuj ✕
+                    </button>
+                  </>
                 ) : (
                   <span className="status-incomplete">Nedostaje: {missingCount} {missingCount === 1 ? 'sastojak' : 'sastojaka'}</span>
                 )}
