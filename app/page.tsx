@@ -249,7 +249,7 @@ export default function Home() {
               <div className="ingredients-instruction">
                 <div className="instruction-icon">👆</div>
                 <div className="instruction-text">
-                  Proveri da li imaš namirnicu i stikliraj
+                  Mirkić, proveri namirnice pre spremanja i štikliraj ako ih ima
                 </div>
                 {checkedIngredients.size === 0 && (
                   <div className="instruction-arrow">← Probaj ovde</div>
