@@ -194,11 +194,15 @@ export default function Home() {
         >
           Danas
         </button>
+      </div>
+      <div className="all-meals-row">
         <button
-          className={`tab ${tab === 'all' ? 'active' : ''}`}
+          className={`all-meals-btn ${tab === 'all' ? 'active' : ''}`}
           onClick={() => setTab('all')}
         >
-          Svi Obroci
+          <span className="all-meals-icon">📋</span>
+          <span>Svi Obroci</span>
+          <span className="all-meals-arrow">{tab === 'all' ? '▲' : '▼'}</span>
         </button>
       </div>
 
