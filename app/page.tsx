@@ -187,22 +187,18 @@ export default function Home() {
         <h1>🍪 Teki Šmeki Jelovnik</h1>
       </div>
 
-      <div className="tabs">
+      <div className="tabs-container">
         <button
-          className={`tab ${tab === 'today' ? 'active' : ''}`}
+          className={`tab-seg ${tab === 'today' ? 'active' : ''}`}
           onClick={() => setTab('today')}
         >
-          Danas
+          🌅 Danas
         </button>
-      </div>
-      <div className="all-meals-row">
         <button
-          className={`all-meals-btn ${tab === 'all' ? 'active' : ''}`}
+          className={`tab-seg ${tab === 'all' ? 'active' : ''}`}
           onClick={() => setTab('all')}
         >
-          <span className="all-meals-icon">📋</span>
-          <span>Svi Obroci</span>
-          <span className="all-meals-arrow">{tab === 'all' ? '▲' : '▼'}</span>
+          📋 Svi Obroci
         </button>
       </div>
 
@@ -320,15 +316,23 @@ export default function Home() {
       {tab === 'all' && (
         <>
           <div className="category-filter">
-            {Object.keys(categoryNames).map((cat) => (
-              <button
-                key={cat}
-                className={`filter-btn ${category === cat ? 'active' : ''}`}
-                onClick={() => setCategory(cat as Category)}
-              >
-                {categoryNames[cat as keyof typeof categoryNames]}
-              </button>
-            ))}
+            <div className="category-filter-main">
+              {(['breakfast', 'lunch', 'dinner', 'snack'] as Category[]).map((cat) => (
+                <button
+                  key={cat}
+                  className={`filter-btn ${category === cat ? 'active' : ''}`}
+                  onClick={() => setCategory(cat)}
+                >
+                  {categoryNames[cat]}
+                </button>
+              ))}
+            </div>
+            <button
+              className={`filter-btn filter-btn-all ${category === 'all' ? 'active' : ''}`}
+              onClick={() => setCategory('all')}
+            >
+              {categoryNames.all}
+            </button>
           </div>
 
           <div className="meals-grid">
